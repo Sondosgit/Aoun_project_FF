@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'q_rcode_model.dart';
 export 'q_rcode_model.dart';
@@ -146,22 +145,6 @@ class _QRcodeWidgetState extends State<QRcodeWidget> {
                     color: Color(0xFF4C4D7B),
                     size: 60.0,
                   ),
-                ),
-              ),
-              Align(
-                alignment: const AlignmentDirectional(0.0, -0.05),
-                child: BarcodeWidget(
-                  data: 'Barcode',
-                  barcode: Barcode.qrCode(),
-                  width: 600.0,
-                  height: 250.0,
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  backgroundColor: Colors.transparent,
-                  errorBuilder: (context, error) => const SizedBox(
-                    width: 600.0,
-                    height: 250.0,
-                  ),
-                  drawText: false,
                 ),
               ),
             ],

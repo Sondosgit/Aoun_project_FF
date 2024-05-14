@@ -216,11 +216,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const MapCaregiverWidget(),
         ),
         FFRoute(
-          name: 'ScanQRCode',
-          path: '/scanQRCode',
-          builder: (context, params) => const ScanQRCodeWidget(),
-        ),
-        FFRoute(
           name: 'code',
           path: '/code',
           builder: (context, params) => const CodeWidget(),
