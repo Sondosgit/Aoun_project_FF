@@ -216,11 +216,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const MapCaregiverWidget(),
         ),
         FFRoute(
-          name: 'code',
-          path: '/code',
-          builder: (context, params) => const CodeWidget(),
-        ),
-        FFRoute(
           name: 'PrayerElderly',
           path: '/prayerElderly',
           builder: (context, params) => const PrayerElderlyWidget(),

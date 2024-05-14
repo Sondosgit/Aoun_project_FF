@@ -40,7 +40,6 @@ export '/pages/caregiver/prayer_caregiver/prayer_caregiver_widget.dart'
     show PrayerCaregiverWidget;
 export '/pages/caregiver/map_caregiver/map_caregiver_widget.dart'
     show MapCaregiverWidget;
-export '/code/code_widget.dart' show CodeWidget;
 export '/pages/elderly/prayer_elderly/prayer_elderly_widget.dart'
     show PrayerElderlyWidget;
 export '/pages/caregiver/game_caregiver/game_caregiver_widget.dart'
