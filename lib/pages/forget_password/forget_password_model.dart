@@ -7,14 +7,10 @@ class ForgetPasswordModel extends FlutterFlowModel<ForgetPasswordWidget> {
 
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for emailField widget.
+  FocusNode? emailFieldFocusNode;
+  TextEditingController? emailFieldTextController;
+  String? Function(BuildContext, String?)? emailFieldTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -22,10 +18,7 @@ class ForgetPasswordModel extends FlutterFlowModel<ForgetPasswordWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
-
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    emailFieldFocusNode?.dispose();
+    emailFieldTextController?.dispose();
   }
 }

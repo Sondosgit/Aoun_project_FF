@@ -11,15 +11,35 @@ class SignInUsersModel extends FlutterFlowModel<SignInUsersWidget> {
   FocusNode? emailFocusNode;
   TextEditingController? emailTextController;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
+  String? _emailTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'الخانة مطلوبة';
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'تحقق من الصيغة';
+    }
+    return null;
+  }
+
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  String? _passwordTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'الخانة مطلوبة';
+    }
+
+    return null;
+  }
 
   @override
   void initState(BuildContext context) {
+    emailTextControllerValidator = _emailTextControllerValidator;
     passwordVisibility = false;
+    passwordTextControllerValidator = _passwordTextControllerValidator;
   }
 
   @override

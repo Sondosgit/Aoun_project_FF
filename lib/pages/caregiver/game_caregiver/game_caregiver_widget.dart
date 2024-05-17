@@ -126,11 +126,11 @@ class _GameCaregiverWidgetState extends State<GameCaregiverWidget> {
                       child: CircularPercentIndicator(
                         percent: () {
                           if (stackExerciseRecord!.moves <= 120) {
-                            return 100.0;
+                            return 1.0;
                           } else if (stackExerciseRecord.moves <= 170) {
-                            return 50.0;
+                            return 0.5;
                           } else {
-                            return 25.0;
+                            return 0.25;
                           }
                         }(),
                         radius: 145.0,
@@ -141,12 +141,12 @@ class _GameCaregiverWidgetState extends State<GameCaregiverWidget> {
                         backgroundColor: FlutterFlowTheme.of(context).accent4,
                         center: Text(
                           () {
-                            if (stackExerciseRecord!.moves <= 120) {
+                            if (stackExerciseRecord!.moves <= 70) {
                               return 100.0;
-                            } else if (stackExerciseRecord.moves <= 170) {
+                            } else if (stackExerciseRecord.moves <= 120) {
                               return 50.0;
                             } else {
-                              return 25.0;
+                              return 30.0;
                             }
                           }()
                               .toString(),

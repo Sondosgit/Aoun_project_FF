@@ -33,6 +33,7 @@ class _EditMedicineWidgetState extends State<EditMedicineWidget> {
 
     _model.medNameUpFocusNode ??= FocusNode();
 
+    _model.timeUpTextController ??= TextEditingController();
     _model.timeUpFocusNode ??= FocusNode();
   }
 
@@ -331,14 +332,7 @@ class _EditMedicineWidgetState extends State<EditMedicineWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.timeUpTextController ??=
-                            TextEditingController(
-                          text: dateTimeFormat(
-                            'jm',
-                            editMedicineMediceneRecord.medTime,
-                            locale: FFLocalizations.of(context).languageCode,
-                          ),
-                        ),
+                        controller: _model.timeUpTextController,
                         focusNode: _model.timeUpFocusNode,
                         autofocus: false,
                         obscureText: false,
@@ -526,20 +520,21 @@ class _EditMedicineWidgetState extends State<EditMedicineWidget> {
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: const AlignmentDirectional(0.83, 0.14),
-                    child: Text(
-                      dateTimeFormat(
-                        'jm',
-                        _model.datePicked,
-                        locale: FFLocalizations.of(context).languageCode,
+                  if (_model.datePicked == null)
+                    Align(
+                      alignment: const AlignmentDirectional(0.84, 0.14),
+                      child: Text(
+                        dateTimeFormat(
+                          'jm',
+                          _model.datePicked,
+                          locale: FFLocalizations.of(context).languageCode,
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
                       ),
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Readex Pro',
-                            letterSpacing: 0.0,
-                          ),
                     ),
-                  ),
                 ],
               ),
             ),

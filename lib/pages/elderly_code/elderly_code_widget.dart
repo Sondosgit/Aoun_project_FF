@@ -126,7 +126,7 @@ class _ElderlyCodeWidgetState extends State<ElderlyCodeWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    context.pushNamed('ChecklistEldelry');
+                    context.pushNamed('ChecklistElderly');
                   },
                   child: const Icon(
                     Icons.check_circle_rounded,
@@ -172,7 +172,7 @@ class _ElderlyCodeWidgetState extends State<ElderlyCodeWidget> {
                       alignment: const AlignmentDirectional(1.0, -1.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => Text(
-                          '$currentUserDisplayNameمرحبا ',
+                          'مرحبا  $currentUserDisplayName',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Readex Pro',

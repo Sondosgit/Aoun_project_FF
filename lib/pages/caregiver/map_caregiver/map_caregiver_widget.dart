@@ -103,14 +103,24 @@ class _MapCaregiverWidgetState extends State<MapCaregiverWidget> {
                                       color: const Color(0xFF6869D6),
                                       fontSize: 30.0,
                                       letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w300,
                                     ),
                               ),
                             ),
-                            const Flexible(
-                              child: Icon(
-                                Icons.arrow_forward,
-                                color: Color(0xFF6869D6),
-                                size: 35.0,
+                            Flexible(
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.safePop();
+                                },
+                                child: const Icon(
+                                  Icons.arrow_forward,
+                                  color: Color(0xFF6869D6),
+                                  size: 35.0,
+                                ),
                               ),
                             ),
                           ],

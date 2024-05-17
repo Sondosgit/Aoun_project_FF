@@ -3,27 +3,25 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'checklist_eldelry_copy_model.dart';
-export 'checklist_eldelry_copy_model.dart';
+import 'checklist_elderly_model.dart';
+export 'checklist_elderly_model.dart';
 
-class ChecklistEldelryCopyWidget extends StatefulWidget {
-  const ChecklistEldelryCopyWidget({super.key});
+class ChecklistElderlyWidget extends StatefulWidget {
+  const ChecklistElderlyWidget({super.key});
 
   @override
-  State<ChecklistEldelryCopyWidget> createState() =>
-      _ChecklistEldelryCopyWidgetState();
+  State<ChecklistElderlyWidget> createState() => _ChecklistElderlyWidgetState();
 }
 
-class _ChecklistEldelryCopyWidgetState
-    extends State<ChecklistEldelryCopyWidget> {
-  late ChecklistEldelryCopyModel _model;
+class _ChecklistElderlyWidgetState extends State<ChecklistElderlyWidget> {
+  late ChecklistElderlyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ChecklistEldelryCopyModel());
+    _model = createModel(context, () => ChecklistElderlyModel());
   }
 
   @override
@@ -114,7 +112,7 @@ class _ChecklistEldelryCopyWidgetState
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 8.0, 0.0),
                                     child: Text(
-                                      '$currentUserDisplayNameمرحبا ',
+                                      'مرحبا $currentUserDisplayName',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -892,7 +890,7 @@ class _ChecklistEldelryCopyWidgetState
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('ChecklistEldelry');
+                              context.pushNamed('ChecklistElderly');
                             },
                             child: const Icon(
                               Icons.check_circle_rounded,

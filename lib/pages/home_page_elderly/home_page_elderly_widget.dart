@@ -367,7 +367,7 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('ChecklistEldelry');
+                        context.pushNamed('ChecklistElderly');
                       },
                       child: const Icon(
                         Icons.check_circle_rounded,

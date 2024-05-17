@@ -12,21 +12,51 @@ class SignUpUsersModel extends FlutterFlowModel<SignUpUsersWidget> {
   FocusNode? nameeEEFocusNode;
   TextEditingController? nameeEETextController;
   String? Function(BuildContext, String?)? nameeEETextControllerValidator;
+  String? _nameeEETextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'الخانة مطلوبة';
+    }
+
+    return null;
+  }
+
   // State field(s) for email widget.
   FocusNode? emailFocusNode;
   TextEditingController? emailTextController;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
+  String? _emailTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'الخانة مطلوبة';
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'تحقق من الصيغة';
+    }
+    return null;
+  }
+
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  String? _passwordTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'الخانة مطلوبة';
+    }
+
+    return null;
+  }
+
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
 
   @override
   void initState(BuildContext context) {
+    nameeEETextControllerValidator = _nameeEETextControllerValidator;
+    emailTextControllerValidator = _emailTextControllerValidator;
     passwordVisibility = false;
+    passwordTextControllerValidator = _passwordTextControllerValidator;
   }
 
   @override

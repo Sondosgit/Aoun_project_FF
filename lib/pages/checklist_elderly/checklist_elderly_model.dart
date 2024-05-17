@@ -1,10 +1,9 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'checklist_eldelry_copy_widget.dart' show ChecklistEldelryCopyWidget;
+import 'checklist_elderly_widget.dart' show ChecklistElderlyWidget;
 import 'package:flutter/material.dart';
 
-class ChecklistEldelryCopyModel
-    extends FlutterFlowModel<ChecklistEldelryCopyWidget> {
+class ChecklistElderlyModel extends FlutterFlowModel<ChecklistElderlyWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

@@ -8,18 +8,18 @@ class AddMedicineModel extends FlutterFlowModel<AddMedicineWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for time widget.
-  FocusNode? timeFocusNode;
-  TextEditingController? timeTextController;
-  String? Function(BuildContext, String?)? timeTextControllerValidator;
+  final formKey = GlobalKey<FormState>();
   // State field(s) for medName widget.
   FocusNode? medNameFocusNode;
   TextEditingController? medNameTextController;
   String? Function(BuildContext, String?)? medNameTextControllerValidator;
-  DateTime? datePicked;
   // State field(s) for dose widget.
   String? doseValue;
   FormFieldController<String>? doseValueController;
+  DateTime? datePicked;
+  // State field(s) for time widget.
+  List<String>? timeValue;
+  FormFieldController<List<String>>? timeValueController;
   // State field(s) for rep widget.
   List<String>? repValue;
   FormFieldController<List<String>>? repValueController;
@@ -30,9 +30,6 @@ class AddMedicineModel extends FlutterFlowModel<AddMedicineWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    timeFocusNode?.dispose();
-    timeTextController?.dispose();
-
     medNameFocusNode?.dispose();
     medNameTextController?.dispose();
   }

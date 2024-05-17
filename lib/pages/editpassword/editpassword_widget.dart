@@ -117,18 +117,6 @@ class _EditpasswordWidgetState extends State<EditpasswordWidget> {
                 context: context,
               );
               context.safePop();
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                    'تم إرسال رابط تعديل كلمة السر',
-                    style: TextStyle(
-                      color: FlutterFlowTheme.of(context).primaryText,
-                    ),
-                  ),
-                  duration: const Duration(milliseconds: 4000),
-                  backgroundColor: FlutterFlowTheme.of(context).secondary,
-                ),
-              );
             },
             text: 'إرسال',
             options: FFButtonOptions(

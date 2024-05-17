@@ -129,7 +129,7 @@ class _SignInUsersWidgetState extends State<SignInUsersWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 11.0, 0.0, 11.0),
                                   child: Text(
-                                    'الإيميل ',
+                                    'البريد الإلكتروني',
                                     textAlign: TextAlign.end,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -407,6 +407,10 @@ class _SignInUsersWidgetState extends State<SignInUsersWidget> {
                           alignment: const AlignmentDirectional(-0.14, 0.93),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              if (_model.formKey.currentState == null ||
+                                  !_model.formKey.currentState!.validate()) {
+                                return;
+                              }
                               GoRouter.of(context).prepareAuthEvent();
 
                               final user = await authManager.signInWithEmail(

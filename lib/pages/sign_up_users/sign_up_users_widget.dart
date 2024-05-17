@@ -463,9 +463,9 @@ class _SignUpUsersWidgetState extends State<SignUpUsersWidget> {
                                 child: FlutterFlowRadioButton(
                                   options: ['كبير سن', 'مقدم رعاية'].toList(),
                                   onChanged: (val) => setState(() {}),
-                                  controller:
-                                      _model.radioButtonValueController ??=
-                                          FormFieldController<String>(null),
+                                  controller: _model
+                                          .radioButtonValueController ??=
+                                      FormFieldController<String>('كبير سن'),
                                   optionHeight: 35.0,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .bodyLarge
@@ -507,6 +507,10 @@ class _SignUpUsersWidgetState extends State<SignUpUsersWidget> {
                               currentUserLocationValue =
                                   await getCurrentUserLocation(
                                       defaultLocation: const LatLng(0.0, 0.0));
+                              if (_model.formKey.currentState == null ||
+                                  !_model.formKey.currentState!.validate()) {
+                                return;
+                              }
                               GoRouter.of(context).prepareAuthEvent();
 
                               final user =

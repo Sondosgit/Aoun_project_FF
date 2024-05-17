@@ -196,20 +196,6 @@ class _EditemailWidgetState extends State<EditemailWidget> {
 
                 await authManager.sendEmailVerification();
                 context.safePop();
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      'تم تعديل البريد الالكتروني بنجاح! قم بتفعيله عبر الرابط المرسل',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Readex Pro',
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            letterSpacing: 0.0,
-                          ),
-                    ),
-                    duration: const Duration(milliseconds: 4000),
-                    backgroundColor: FlutterFlowTheme.of(context).secondary,
-                  ),
-                );
               }
             },
             text: 'نعم',

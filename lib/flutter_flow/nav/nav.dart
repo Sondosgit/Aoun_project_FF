@@ -221,11 +221,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const GameCaregiverWidget(),
         ),
         FFRoute(
-          name: 'ChecklistEldelry',
-          path: '/checklistEldelry',
-          builder: (context, params) => const ChecklistEldelryWidget(),
-        ),
-        FFRoute(
           name: 'MapTracking',
           path: '/mapTracking',
           builder: (context, params) => const MapTrackingWidget(),
@@ -268,19 +263,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const CreateAccount5Widget(),
         ),
         FFRoute(
-          name: 'AddMedicineCopy',
-          path: '/addMedicineCopy',
-          builder: (context, params) => const AddMedicineCopyWidget(),
-        ),
-        FFRoute(
           name: 'PrayerCaregiver',
           path: '/prayerCaregiver',
           builder: (context, params) => const PrayerCaregiverWidget(),
         ),
         FFRoute(
-          name: 'ChecklistEldelryCopy',
-          path: '/checklistEldelryCopy',
-          builder: (context, params) => const ChecklistEldelryCopyWidget(),
+          name: 'ChecklistElderly',
+          path: '/checklistElderly',
+          builder: (context, params) => const ChecklistElderlyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

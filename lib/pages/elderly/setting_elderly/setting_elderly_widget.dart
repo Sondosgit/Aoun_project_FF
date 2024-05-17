@@ -45,19 +45,7 @@ class _SettingElderlyWidgetState extends State<SettingElderlyWidget> {
           child: Stack(
             children: [
               Align(
-                alignment: const AlignmentDirectional(0.49, -0.26),
-                child: Text(
-                  ':الرمز الخاص بك',
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Readex Pro',
-                        fontSize: 23.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w300,
-                      ),
-                ),
-              ),
-              Align(
-                alignment: const AlignmentDirectional(0.94, -1.01),
+                alignment: const AlignmentDirectional(0.93, -0.95),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -167,14 +155,6 @@ class _SettingElderlyWidgetState extends State<SettingElderlyWidget> {
                   ),
                 ),
               ),
-              const Align(
-                alignment: AlignmentDirectional(0.94, -0.27),
-                child: Icon(
-                  Icons.numbers_rounded,
-                  color: Color(0xFF4C4D7B),
-                  size: 50.0,
-                ),
-              ),
               Align(
                 alignment: const AlignmentDirectional(0.39, 0.15),
                 child: InkWell(
@@ -207,7 +187,7 @@ class _SettingElderlyWidgetState extends State<SettingElderlyWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(-0.03, -1.03),
+                alignment: const AlignmentDirectional(-0.01, -0.97),
                 child: Text(
                   'الإعدادات',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -241,20 +221,6 @@ class _SettingElderlyWidgetState extends State<SettingElderlyWidget> {
                     Icons.person_sharp,
                     color: Color(0xFF4C4D7B),
                     size: 50.0,
-                  ),
-                ),
-              ),
-              Align(
-                alignment: const AlignmentDirectional(0.07, -0.05),
-                child: AuthUserStreamWidget(
-                  builder: (context) => Text(
-                    valueOrDefault(currentUserDocument?.userID, ''),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
-                          fontSize: 25.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w600,
-                        ),
                   ),
                 ),
               ),

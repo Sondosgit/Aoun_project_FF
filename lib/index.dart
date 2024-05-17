@@ -42,8 +42,6 @@ export '/pages/elderly/prayer_elderly/prayer_elderly_widget.dart'
     show PrayerElderlyWidget;
 export '/pages/caregiver/game_caregiver/game_caregiver_widget.dart'
     show GameCaregiverWidget;
-export '/pages/checklist_eldelry/checklist_eldelry_widget.dart'
-    show ChecklistEldelryWidget;
 export '/pages/elderly/map_tracking/map_tracking_widget.dart'
     show MapTrackingWidget;
 export '/pages/medicines_page/medicines_page_widget.dart'
@@ -55,9 +53,7 @@ export '/pages/caregiver/med_caregiver/med_caregiver_widget.dart'
 export '/pages/caregiver/edit_profile_caregiverf/edit_profile_caregiverf_widget.dart'
     show EditProfileCaregiverfWidget;
 export '/create_account5/create_account5_widget.dart' show CreateAccount5Widget;
-export '/pages/elderly/add_medicine_copy/add_medicine_copy_widget.dart'
-    show AddMedicineCopyWidget;
 export '/pages/caregiver/prayer_caregiver/prayer_caregiver_widget.dart'
     show PrayerCaregiverWidget;
-export '/pages/checklist_eldelry_copy/checklist_eldelry_copy_widget.dart'
-    show ChecklistEldelryCopyWidget;
+export '/pages/checklist_elderly/checklist_elderly_widget.dart'
+    show ChecklistElderlyWidget;
