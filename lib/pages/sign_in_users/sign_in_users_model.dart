@@ -6,15 +6,16 @@ class SignInUsersModel extends FlutterFlowModel<SignInUsersWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
+  // State field(s) for email widget.
+  FocusNode? emailFocusNode;
+  TextEditingController? emailTextController;
+  String? Function(BuildContext, String?)? emailTextControllerValidator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
-  // State field(s) for email widget.
-  FocusNode? emailFocusNode;
-  TextEditingController? emailTextController;
-  String? Function(BuildContext, String?)? emailTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
@@ -24,10 +25,10 @@ class SignInUsersModel extends FlutterFlowModel<SignInUsersWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    passwordFocusNode?.dispose();
-    passwordTextController?.dispose();
-
     emailFocusNode?.dispose();
     emailTextController?.dispose();
+
+    passwordFocusNode?.dispose();
+    passwordTextController?.dispose();
   }
 }

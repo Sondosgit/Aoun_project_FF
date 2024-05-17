@@ -51,31 +51,39 @@ class _MedCaregiverWidgetState extends State<MedCaregiverWidget> {
                 children: [
                   Align(
                     alignment: const AlignmentDirectional(-0.02, -1.03),
-                    child: Text(
-                      'الأدوية',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Readex Pro',
-                            color: const Color(0xFF6869D6),
-                            fontSize: 35.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w300,
-                          ),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                      child: Text(
+                        'الأدوية',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              color: const Color(0xFF6869D6),
+                              fontSize: 35.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w300,
+                            ),
+                      ),
                     ),
                   ),
                   Align(
                     alignment: const AlignmentDirectional(1.0, 0.0),
-                    child: InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.safePop();
-                      },
-                      child: const Icon(
-                        Icons.arrow_forward_ios,
-                        color: Color(0xFF6869D6),
-                        size: 40.0,
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.safePop();
+                        },
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                          color: Color(0xFF6869D6),
+                          size: 40.0,
+                        ),
                       ),
                     ),
                   ),
@@ -85,23 +93,28 @@ class _MedCaregiverWidgetState extends State<MedCaregiverWidget> {
                 alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(140.0, 9.0, 20.0, 9.0),
+                      const EdgeInsetsDirectional.fromSTEB(140.0, 0.0, 20.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Align(
                         alignment: const AlignmentDirectional(-0.02, -1.03),
-                        child: Text(
-                          'الأداء',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Readex Pro',
-                                    color: const Color(0xFF3D3D6B),
-                                    fontSize: 35.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w300,
-                                  ),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 10.0),
+                          child: Text(
+                            'الأداء',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  color: const Color(0xFF3D3D6B),
+                                  fontSize: 35.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                          ),
                         ),
                       ),
                     ],
@@ -154,7 +167,7 @@ class _MedCaregiverWidgetState extends State<MedCaregiverWidget> {
                                       16.0, 8.0, 16.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
-                                    height: 88.0,
+                                    height: 85.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -167,66 +180,38 @@ class _MedCaregiverWidgetState extends State<MedCaregiverWidget> {
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                          MainAxisAlignment.spaceAround,
                                       children: [
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 20.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.end,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                Text(
-                                                  dateTimeFormat(
-                                                    'jm',
-                                                    listViewMediceneRecord
-                                                        .medTime!,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        fontSize: 17.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ]
-                                                  .divide(const SizedBox(width: 0.0))
-                                                  .around(const SizedBox(width: 0.0)),
-                                            ),
+                                        Text(
+                                          dateTimeFormat(
+                                            'jm',
+                                            listViewMediceneRecord.medTime!,
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
                                           ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                fontSize: 17.0,
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(1.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
-                                                MainAxisAlignment.spaceAround,
+                                                MainAxisAlignment.spaceEvenly,
                                             crossAxisAlignment:
-                                                CrossAxisAlignment.start,
+                                                CrossAxisAlignment.center,
                                             children: [
-                                              if (listViewMediceneRecord
-                                                      .taken ==
-                                                  true)
+                                              if (listViewMediceneRecord.taken)
                                                 const Icon(
                                                   Icons.check_circle,
-                                                  color: Color(0xFFEECA60),
-                                                  size: 45.0,
+                                                  color: Color(0xFFF1CE74),
+                                                  size: 37.0,
                                                 ),
                                               Text(
                                                 listViewMediceneRecord.medName,
@@ -241,8 +226,8 @@ class _MedCaregiverWidgetState extends State<MedCaregiverWidget> {
                                                         ),
                                               ),
                                             ]
-                                                .divide(const SizedBox(width: 20.0))
-                                                .around(const SizedBox(width: 20.0)),
+                                                .divide(const SizedBox(width: 0.0))
+                                                .around(const SizedBox(width: 0.0)),
                                           ),
                                         ),
                                       ],

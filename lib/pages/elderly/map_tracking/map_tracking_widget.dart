@@ -103,17 +103,19 @@ class _MapTrackingWidgetState extends State<MapTrackingWidget> {
                 return Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Flexible(
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 22.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Expanded(
+                          Flexible(
                             child: Align(
-                              alignment: const AlignmentDirectional(-0.06, -1.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 30.0, 0.0, 0.0),
+                                    0.0, 30.0, 0.0, 11.0),
                                 child: Text(
                                   'الموقع',
                                   textAlign: TextAlign.center,
@@ -130,25 +132,23 @@ class _MapTrackingWidgetState extends State<MapTrackingWidget> {
                               ),
                             ),
                           ),
-                          Expanded(
-                            child: Align(
-                              alignment: const AlignmentDirectional(0.95, -0.97),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 30.0, 0.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed('HomePageElderly');
-                                  },
-                                  child: const Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Color(0xFF6869D6),
-                                    size: 40.0,
-                                  ),
+                          Align(
+                            alignment: const AlignmentDirectional(1.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 30.0, 0.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('HomePageElderly');
+                                },
+                                child: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Color(0xFF6869D6),
+                                  size: 40.0,
                                 ),
                               ),
                             ),
@@ -156,74 +156,68 @@ class _MapTrackingWidgetState extends State<MapTrackingWidget> {
                         ],
                       ),
                     ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Align(
-                          alignment: const AlignmentDirectional(0.0, 1.11),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 8.0, 16.0, 0.0),
-                            child: Container(
-                              width: double.infinity,
-                              height: 750.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                borderRadius: BorderRadius.circular(0.0),
-                                border: Border.all(
-                                  color: const Color(0xFF67C0E6),
-                                  width: 3.0,
-                                ),
-                              ),
-                              child: Builder(builder: (context) {
-                                final googleMapMarker =
-                                    currentUserLocationValue;
-                                return FlutterFlowGoogleMap(
-                                  controller: _model.googleMapsController,
-                                  onCameraIdle: (latLng) => setState(
-                                      () => _model.googleMapsCenter = latLng),
-                                  initialLocation: _model.googleMapsCenter ??=
-                                      currentUserLocationValue!,
-                                  markers: [
-                                    if (googleMapMarker != null)
-                                      FlutterFlowMarker(
-                                        googleMapMarker.serialize(),
-                                        googleMapMarker,
-                                        () async {
-                                          currentUserLocationValue =
-                                              await getCurrentUserLocation(
-                                                  defaultLocation:
-                                                      const LatLng(0.0, 0.0));
-
-                                          await columnElderlyLocationRecord!
-                                              .reference
-                                              .update(
-                                                  createElderlyLocationRecordData(
-                                            elderlyCurrentLoc:
-                                                currentUserLocationValue,
-                                          ));
-                                        },
-                                      ),
-                                  ],
-                                  markerColor: GoogleMarkerColor.blue,
-                                  mapType: MapType.normal,
-                                  style: GoogleMapStyle.standard,
-                                  initialZoom: 11.0,
-                                  allowInteraction: true,
-                                  allowZoom: true,
-                                  showZoomControls: true,
-                                  showLocation: true,
-                                  showCompass: false,
-                                  showMapToolbar: false,
-                                  showTraffic: false,
-                                  centerMapOnMarkerTap: true,
-                                );
-                              }),
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 1.11),
+                      child: Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0, 8.0, 16.0, 0.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 533.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(0.0),
+                            border: Border.all(
+                              color: const Color(0xFF67C0E6),
+                              width: 3.0,
                             ),
                           ),
+                          child: Builder(builder: (context) {
+                            final googleMapMarker = currentUserLocationValue;
+                            return FlutterFlowGoogleMap(
+                              controller: _model.googleMapsController,
+                              onCameraIdle: (latLng) => setState(
+                                  () => _model.googleMapsCenter = latLng),
+                              initialLocation: _model.googleMapsCenter ??=
+                                  currentUserLocationValue!,
+                              markers: [
+                                if (googleMapMarker != null)
+                                  FlutterFlowMarker(
+                                    googleMapMarker.serialize(),
+                                    googleMapMarker,
+                                    () async {
+                                      currentUserLocationValue =
+                                          await getCurrentUserLocation(
+                                              defaultLocation:
+                                                  const LatLng(0.0, 0.0));
+
+                                      await columnElderlyLocationRecord!
+                                          .reference
+                                          .update(
+                                              createElderlyLocationRecordData(
+                                        elderlyCurrentLoc:
+                                            currentUserLocationValue,
+                                      ));
+                                    },
+                                  ),
+                              ],
+                              markerColor: GoogleMarkerColor.blue,
+                              mapType: MapType.normal,
+                              style: GoogleMapStyle.standard,
+                              initialZoom: 11.0,
+                              allowInteraction: true,
+                              allowZoom: true,
+                              showZoomControls: true,
+                              showLocation: true,
+                              showCompass: false,
+                              showMapToolbar: false,
+                              showTraffic: false,
+                              centerMapOnMarkerTap: true,
+                            );
+                          }),
                         ),
-                      ],
+                      ),
                     ),
                   ],
                 );

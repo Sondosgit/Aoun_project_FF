@@ -178,7 +178,8 @@ class _HomePageCaregiverWidgetState extends State<HomePageCaregiverWidget> {
                         borderRadius: BorderRadius.circular(40.0),
                         child: Image.asset(
                           'assets/images/Screenshot_(95).png',
-                          height: 170.0,
+                          width: 155.0,
+                          height: 160.0,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -198,7 +199,8 @@ class _HomePageCaregiverWidgetState extends State<HomePageCaregiverWidget> {
                         borderRadius: BorderRadius.circular(40.0),
                         child: Image.asset(
                           'assets/images/Screenshot_(97).png',
-                          height: 170.0,
+                          width: 155.0,
+                          height: 160.0,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -218,7 +220,8 @@ class _HomePageCaregiverWidgetState extends State<HomePageCaregiverWidget> {
                         borderRadius: BorderRadius.circular(40.0),
                         child: Image.asset(
                           'assets/images/Screenshot_(96).png',
-                          height: 170.0,
+                          width: 155.0,
+                          height: 160.0,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -238,7 +241,8 @@ class _HomePageCaregiverWidgetState extends State<HomePageCaregiverWidget> {
                         borderRadius: BorderRadius.circular(40.0),
                         child: Image.asset(
                           'assets/images/Screenshot_(98).png',
-                          height: 170.0,
+                          width: 155.0,
+                          height: 160.0,
                           fit: BoxFit.cover,
                         ),
                       ),

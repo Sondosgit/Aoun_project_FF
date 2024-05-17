@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'q_rcode_widget.dart' show QRcodeWidget;
+import 'elderly_code_widget.dart' show ElderlyCodeWidget;
 import 'package:flutter/material.dart';
 
-class QRcodeModel extends FlutterFlowModel<QRcodeWidget> {
+class ElderlyCodeModel extends FlutterFlowModel<ElderlyCodeWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

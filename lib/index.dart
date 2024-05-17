@@ -15,7 +15,7 @@ export '/pages/home_page_elderly/home_page_elderly_widget.dart'
 export '/pages/sign_in_users/sign_in_users_widget.dart' show SignInUsersWidget;
 export '/pages/elderly/setting_elderly/setting_elderly_widget.dart'
     show SettingElderlyWidget;
-export '/pages/q_rcode/q_rcode_widget.dart' show QRcodeWidget;
+export '/pages/elderly_code/elderly_code_widget.dart' show ElderlyCodeWidget;
 export '/pages/edit_profile_elderly/edit_profile_elderly_widget.dart'
     show EditProfileElderlyWidget;
 export '/pages/elderly/game_instruction/game_instruction_widget.dart'
@@ -24,9 +24,9 @@ export '/pages/elderly/game/game_widget.dart' show GameWidget;
 export '/pages/game_result/game_result_widget.dart' show GameResultWidget;
 export '/pages/forget_password/forget_password_widget.dart'
     show ForgetPasswordWidget;
-export '/pages/caregiver/sign_in_cargiver/sign_in_cargiver_widget.dart'
+export '/sign_in_cargiver/sign_in_cargiver_widget.dart'
     show SignInCargiverWidget;
-export '/pages/caregiver/sign_up_caregiver/sign_up_caregiver_widget.dart'
+export '/sign_up_caregiver/sign_up_caregiver_widget.dart'
     show SignUpCaregiverWidget;
 export '/pages/caregiver/add_elderly/add_elderly_widget.dart'
     show AddElderlyWidget;
@@ -36,8 +36,6 @@ export '/pages/caregiver/elderly_successfully_added/elderly_successfully_added_w
     show ElderlySuccessfullyAddedWidget;
 export '/pages/caregiver/home_page_caregiver/home_page_caregiver_widget.dart'
     show HomePageCaregiverWidget;
-export '/pages/caregiver/prayer_caregiver/prayer_caregiver_widget.dart'
-    show PrayerCaregiverWidget;
 export '/pages/caregiver/map_caregiver/map_caregiver_widget.dart'
     show MapCaregiverWidget;
 export '/pages/elderly/prayer_elderly/prayer_elderly_widget.dart'
@@ -57,3 +55,9 @@ export '/pages/caregiver/med_caregiver/med_caregiver_widget.dart'
 export '/pages/caregiver/edit_profile_caregiverf/edit_profile_caregiverf_widget.dart'
     show EditProfileCaregiverfWidget;
 export '/create_account5/create_account5_widget.dart' show CreateAccount5Widget;
+export '/pages/elderly/add_medicine_copy/add_medicine_copy_widget.dart'
+    show AddMedicineCopyWidget;
+export '/pages/caregiver/prayer_caregiver/prayer_caregiver_widget.dart'
+    show PrayerCaregiverWidget;
+export '/pages/checklist_eldelry_copy/checklist_eldelry_copy_widget.dart'
+    show ChecklistEldelryCopyWidget;

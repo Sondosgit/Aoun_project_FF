@@ -7,11 +7,7 @@ class SignUpUsersModel extends FlutterFlowModel<SignUpUsersWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for password widget.
-  FocusNode? passwordFocusNode;
-  TextEditingController? passwordTextController;
-  late bool passwordVisibility;
-  String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  final formKey = GlobalKey<FormState>();
   // State field(s) for nameeEE widget.
   FocusNode? nameeEEFocusNode;
   TextEditingController? nameeEETextController;
@@ -20,6 +16,11 @@ class SignUpUsersModel extends FlutterFlowModel<SignUpUsersWidget> {
   FocusNode? emailFocusNode;
   TextEditingController? emailTextController;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
+  // State field(s) for password widget.
+  FocusNode? passwordFocusNode;
+  TextEditingController? passwordTextController;
+  late bool passwordVisibility;
+  String? Function(BuildContext, String?)? passwordTextControllerValidator;
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
 
@@ -31,14 +32,14 @@ class SignUpUsersModel extends FlutterFlowModel<SignUpUsersWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    passwordFocusNode?.dispose();
-    passwordTextController?.dispose();
-
     nameeEEFocusNode?.dispose();
     nameeEETextController?.dispose();
 
     emailFocusNode?.dispose();
     emailTextController?.dispose();
+
+    passwordFocusNode?.dispose();
+    passwordTextController?.dispose();
   }
 
   /// Additional helper methods.

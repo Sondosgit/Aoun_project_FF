@@ -252,7 +252,7 @@ class _MedicinesPageWidgetState extends State<MedicinesPageWidget> {
                                         child: Row(
                                           mainAxisSize: MainAxisSize.min,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
+                                              MainAxisAlignment.spaceAround,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
@@ -275,7 +275,7 @@ class _MedicinesPageWidgetState extends State<MedicinesPageWidget> {
                                               ),
                                             ),
                                             Text(
-                                              ':دواء${listViewMediceneRecord.medName}',
+                                              listViewMediceneRecord.medName,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium

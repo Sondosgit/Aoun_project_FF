@@ -778,7 +778,7 @@ class _ChecklistEldelryWidgetState extends State<ChecklistEldelryWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('QRcode');
+                          context.pushNamed('elderlyCode');
                         },
                         child: const Icon(
                           Icons.people_alt_rounded,

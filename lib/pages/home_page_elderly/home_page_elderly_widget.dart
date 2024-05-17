@@ -95,7 +95,7 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                                   .override(
                                     fontFamily: 'Readex Pro',
                                     color: const Color(0xFF3B3F3F),
-                                    fontSize: 35.0,
+                                    fontSize: 30.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w300,
                                   ),
@@ -111,7 +111,7 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                                 .override(
                                   fontFamily: 'Readex Pro',
                                   color: const Color(0xFF3B3F3F),
-                                  fontSize: 35.0,
+                                  fontSize: 30.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w300,
                                 ),
@@ -121,7 +121,7 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.63, -0.12),
+                    alignment: const AlignmentDirectional(0.68, -0.15),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -159,14 +159,14 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-0.65, -0.12),
+                    alignment: const AlignmentDirectional(-0.66, -0.17),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('PrayerCaregiver');
+                        context.pushNamed('PrayerElderly');
                       },
                       child: Text(
                         'الصلاة',
@@ -238,7 +238,8 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                         borderRadius: BorderRadius.circular(40.0),
                         child: Image.asset(
                           'assets/images/Screenshot_(95).png',
-                          height: 170.0,
+                          width: 155.0,
+                          height: 160.0,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -258,7 +259,8 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                         borderRadius: BorderRadius.circular(40.0),
                         child: Image.asset(
                           'assets/images/Screenshot_(97).png',
-                          height: 170.0,
+                          width: 155.0,
+                          height: 160.0,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -278,7 +280,8 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                         borderRadius: BorderRadius.circular(40.0),
                         child: Image.asset(
                           'assets/images/Screenshot_(96).png',
-                          height: 170.0,
+                          width: 155.0,
+                          height: 160.0,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -298,7 +301,8 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                         borderRadius: BorderRadius.circular(40.0),
                         child: Image.asset(
                           'assets/images/Screenshot_(98).png',
-                          height: 170.0,
+                          width: 155.0,
+                          height: 160.0,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -329,7 +333,7 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('QRcode');
+                        context.pushNamed('elderlyCode');
                       },
                       child: const Icon(
                         Icons.people_alt_rounded,

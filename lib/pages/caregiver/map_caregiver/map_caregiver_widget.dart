@@ -84,123 +84,89 @@ class _MapCaregiverWidgetState extends State<MapCaregiverWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Flexible(
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Container(
-                            width: 385.0,
-                            height: 100.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          99.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        'الموقع',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              fontSize: 30.0,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 33.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  140.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                'الموقع',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      color: const Color(0xFF6869D6),
+                                      fontSize: 30.0,
+                                      letterSpacing: 0.0,
                                     ),
-                                    Align(
-                                      alignment:
-                                          const AlignmentDirectional(-1.0, 1.0),
-                                      child: Text(
-                                        '${columnElderlyLocationRecord?.elderlyName}هنا يظهر الموقع الخاص بـ ',
-                                        textAlign: TextAlign.start,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Icon(
-                                  Icons.arrow_forward,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                              ],
+                              ),
                             ),
-                          ),
-                        ],
+                            const Flexible(
+                              child: Icon(
+                                Icons.arrow_forward,
+                                color: Color(0xFF6869D6),
+                                size: 35.0,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Align(
-                          alignment: const AlignmentDirectional(0.0, 1.11),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 8.0, 16.0, 0.0),
-                            child: Container(
-                              width: double.infinity,
-                              height: 750.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                borderRadius: BorderRadius.circular(0.0),
-                                border: Border.all(
-                                  color: const Color(0xFF67C0E6),
-                                  width: 3.0,
-                                ),
-                              ),
-                              child: Builder(builder: (context) {
-                                final googleMapMarker =
-                                    columnElderlyLocationRecord
-                                        ?.elderlyCurrentLoc;
-                                return FlutterFlowGoogleMap(
-                                  controller: _model.googleMapsController,
-                                  onCameraIdle: (latLng) => setState(
-                                      () => _model.googleMapsCenter = latLng),
-                                  initialLocation: _model.googleMapsCenter ??=
-                                      columnElderlyLocationRecord!
-                                          .elderlyCurrentLoc!,
-                                  markers: [
-                                    if (googleMapMarker != null)
-                                      FlutterFlowMarker(
-                                        googleMapMarker.serialize(),
-                                        googleMapMarker,
-                                      ),
-                                  ],
-                                  markerColor: GoogleMarkerColor.blue,
-                                  mapType: MapType.normal,
-                                  style: GoogleMapStyle.standard,
-                                  initialZoom: 11.0,
-                                  allowInteraction: true,
-                                  allowZoom: true,
-                                  showZoomControls: true,
-                                  showLocation: true,
-                                  showCompass: false,
-                                  showMapToolbar: false,
-                                  showTraffic: false,
-                                  centerMapOnMarkerTap: true,
-                                );
-                              }),
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 1.11),
+                      child: Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0, 8.0, 16.0, 0.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 533.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(0.0),
+                            border: Border.all(
+                              color: const Color(0xFF67C0E6),
+                              width: 3.0,
                             ),
                           ),
+                          child: Builder(builder: (context) {
+                            final googleMapMarker =
+                                columnElderlyLocationRecord?.elderlyCurrentLoc;
+                            return FlutterFlowGoogleMap(
+                              controller: _model.googleMapsController,
+                              onCameraIdle: (latLng) => setState(
+                                  () => _model.googleMapsCenter = latLng),
+                              initialLocation: _model.googleMapsCenter ??=
+                                  columnElderlyLocationRecord!
+                                      .elderlyCurrentLoc!,
+                              markers: [
+                                if (googleMapMarker != null)
+                                  FlutterFlowMarker(
+                                    googleMapMarker.serialize(),
+                                    googleMapMarker,
+                                  ),
+                              ],
+                              markerColor: GoogleMarkerColor.blue,
+                              mapType: MapType.normal,
+                              style: GoogleMapStyle.standard,
+                              initialZoom: 11.0,
+                              allowInteraction: true,
+                              allowZoom: true,
+                              showZoomControls: true,
+                              showLocation: true,
+                              showCompass: false,
+                              showMapToolbar: false,
+                              showTraffic: false,
+                              centerMapOnMarkerTap: true,
+                            );
+                          }),
                         ),
-                      ],
+                      ),
                     ),
                   ],
                 );

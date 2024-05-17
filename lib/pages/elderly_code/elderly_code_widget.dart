@@ -1,25 +1,26 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'q_rcode_model.dart';
-export 'q_rcode_model.dart';
+import 'elderly_code_model.dart';
+export 'elderly_code_model.dart';
 
-class QRcodeWidget extends StatefulWidget {
-  const QRcodeWidget({super.key});
+class ElderlyCodeWidget extends StatefulWidget {
+  const ElderlyCodeWidget({super.key});
 
   @override
-  State<QRcodeWidget> createState() => _QRcodeWidgetState();
+  State<ElderlyCodeWidget> createState() => _ElderlyCodeWidgetState();
 }
 
-class _QRcodeWidgetState extends State<QRcodeWidget> {
-  late QRcodeModel _model;
+class _ElderlyCodeWidgetState extends State<ElderlyCodeWidget> {
+  late ElderlyCodeModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => QRcodeModel());
+    _model = createModel(context, () => ElderlyCodeModel());
   }
 
   @override
@@ -48,19 +49,6 @@ class _QRcodeWidgetState extends State<QRcodeWidget> {
                   Icons.settings,
                   color: Color(0xFF4C4D7B),
                   size: 50.0,
-                ),
-              ),
-              Align(
-                alignment: const AlignmentDirectional(0.68, -0.97),
-                child: Text(
-                  'مرحباً ',
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Readex Pro',
-                        color: const Color(0xFF3B3F3F),
-                        fontSize: 35.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w300,
-                      ),
                 ),
               ),
               Align(
@@ -104,7 +92,7 @@ class _QRcodeWidgetState extends State<QRcodeWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    context.pushNamed('QRcode');
+                    context.pushNamed('elderlyCode');
                   },
                   child: const Icon(
                     Icons.people_alt_rounded,
@@ -145,6 +133,58 @@ class _QRcodeWidgetState extends State<QRcodeWidget> {
                     color: Color(0xFF4C4D7B),
                     size: 60.0,
                   ),
+                ),
+              ),
+              Align(
+                alignment: const AlignmentDirectional(-0.02, -0.18),
+                child: AuthUserStreamWidget(
+                  builder: (context) => Text(
+                    valueOrDefault(currentUserDocument?.userID, ''),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Readex Pro',
+                          fontSize: 27.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: const AlignmentDirectional(-0.01, -0.41),
+                child: Text(
+                  ':الرمز الخاص بك',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Readex Pro',
+                        fontSize: 23.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+              ),
+              Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Align(
+                      alignment: const AlignmentDirectional(1.0, -1.0),
+                      child: AuthUserStreamWidget(
+                        builder: (context) => Text(
+                          '$currentUserDisplayNameمرحبا ',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: const Color(0xFF3B3F3F),
+                                    fontSize: 35.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                        ),
+                      ),
+                    ),
+                  ].divide(const SizedBox(width: 10.0)),
                 ),
               ),
             ],

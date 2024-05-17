@@ -42,45 +42,20 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
-          child: AuthUserStreamWidget(
-            builder: (context) => StreamBuilder<List<PrayerRecord>>(
-              stream: queryPrayerRecord(
-                queryBuilder: (prayerRecord) => prayerRecord.where(
-                  'createdByID',
-                  isEqualTo:
-                      valueOrDefault(currentUserDocument?.secondUserID, ''),
-                ),
-                singleRecord: true,
-              ),
-              builder: (context, snapshot) {
-                // Customize what your widget looks like when it's loading.
-                if (!snapshot.hasData) {
-                  return Center(
-                    child: SizedBox(
-                      width: 50.0,
-                      height: 50.0,
-                      child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          FlutterFlowTheme.of(context).primary,
-                        ),
-                      ),
-                    ),
-                  );
-                }
-                List<PrayerRecord> stackPrayerRecordList = snapshot.data!;
-                // Return an empty Container when the item does not exist.
-                if (snapshot.data!.isEmpty) {
-                  return Container();
-                }
-                final stackPrayerRecord = stackPrayerRecordList.isNotEmpty
-                    ? stackPrayerRecordList.first
-                    : null;
-                return Stack(
-                  children: [
-                    Align(
-                      alignment: const AlignmentDirectional(0.04, -0.96),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Align(
+                    alignment: const AlignmentDirectional(-0.02, -1.03),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                       child: Text(
-                        'الصلاة ',
+                        'الصلاة',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
                               color: const Color(0xFF6869D6),
@@ -90,15 +65,19 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                             ),
                       ),
                     ),
-                    Align(
-                      alignment: const AlignmentDirectional(0.94, -0.95),
+                  ),
+                  Align(
+                    alignment: const AlignmentDirectional(1.0, 0.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('HomePageCaregiver');
+                          context.safePop();
                         },
                         child: const Icon(
                           Icons.arrow_forward_ios,
@@ -107,308 +86,458 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                         ),
                       ),
                     ),
-                    Align(
-                      alignment: const AlignmentDirectional(0.85, -0.68),
-                      child: Text(
-                        'الأداء ',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Readex Pro',
-                              color: const Color(0xFF6869D6),
-                              fontSize: 35.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w300,
-                            ),
-                      ),
-                    ),
-                    Align(
-                      alignment: const AlignmentDirectional(0.0, -0.08),
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 8.0, 16.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 69.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(50.0),
-                            border: Border.all(
-                              color: const Color(0xFF0ABD95),
-                              width: 3.0,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 12.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                if (stackPrayerRecord?.maghrib == true)
-                                  const Icon(
-                                    Icons.check_circle,
-                                    color: Color(0xFF0ABD95),
-                                    size: 37.0,
-                                  ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      150.0, 16.0, 0.0, 16.0),
-                                  child: Text(
-                                    'صلاة المغرب',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 25.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w300,
-                                        ),
-                                  ),
+                  ),
+                ],
+              ),
+              Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(140.0, 0.0, 20.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Align(
+                        alignment: const AlignmentDirectional(-0.02, -1.03),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 10.0),
+                          child: Text(
+                            'الأداء',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  color: const Color(0xFF3D3D6B),
+                                  fontSize: 35.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w300,
                                 ),
-                                const Icon(
-                                  Icons.mosque_sharp,
-                                  color: Color(0xFF575290),
-                                  size: 37.0,
-                                ),
-                              ],
-                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Align(
-                      alignment: const AlignmentDirectional(0.0, -0.49),
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 8.0, 16.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 69.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(50.0),
-                            border: Border.all(
-                              color: const Color(0xFF0ABD95),
-                              width: 3.0,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 12.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                if (stackPrayerRecord?.dhuhr == true)
-                                  const Icon(
-                                    Icons.check_circle,
-                                    color: Color(0xFF0ABD95),
-                                    size: 37.0,
-                                  ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      150.0, 16.0, 0.0, 16.0),
-                                  child: Text(
-                                    'صلاة الظهر',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 25.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w300,
-                                        ),
-                                  ),
-                                ),
-                                const Icon(
-                                  Icons.mosque_sharp,
-                                  color: Color(0xFF575290),
-                                  size: 37.0,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                    ],
+                  ),
+                ),
+              ),
+              Align(
+                alignment: const AlignmentDirectional(0.0, -1.0),
+                child: AuthUserStreamWidget(
+                  builder: (context) => StreamBuilder<List<PrayerRecord>>(
+                    stream: queryPrayerRecord(
+                      queryBuilder: (prayerRecord) => prayerRecord.where(
+                        'createdByID',
+                        isEqualTo: valueOrDefault(
+                            currentUserDocument?.secondUserID, ''),
                       ),
+                      singleRecord: true,
                     ),
-                    Align(
-                      alignment: const AlignmentDirectional(0.0, 0.13),
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 8.0, 16.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 69.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(50.0),
-                            border: Border.all(
-                              color: const Color(0xFF0ABD95),
-                              width: 3.0,
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
+                              ),
                             ),
                           ),
-                          child: Padding(
+                        );
+                      }
+                      List<PrayerRecord> listViewPrayerRecordList =
+                          snapshot.data!;
+                      // Return an empty Container when the item does not exist.
+                      if (snapshot.data!.isEmpty) {
+                        return Container();
+                      }
+                      final listViewPrayerRecord =
+                          listViewPrayerRecordList.isNotEmpty
+                              ? listViewPrayerRecordList.first
+                              : null;
+                      return ListView(
+                        padding: EdgeInsets.zero,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        children: [
+                          Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 12.0, 0.0),
-                            child: Row(
+                                0.0, 60.0, 0.0, 0.0),
+                            child: Column(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                if (stackPrayerRecord?.isha == true)
-                                  const Icon(
-                                    Icons.check_circle,
-                                    color: Color(0xFF0ABD95),
-                                    size: 37.0,
-                                  ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      150.0, 16.0, 0.0, 16.0),
-                                  child: Text(
-                                    'صلاة العشاء',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 25.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w300,
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, -0.49),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 8.0, 16.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 69.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        border: Border.all(
+                                          color: const Color(0xFF0ABD95),
+                                          width: 3.0,
                                         ),
-                                  ),
-                                ),
-                                const Icon(
-                                  Icons.mosque_sharp,
-                                  color: Color(0xFF575290),
-                                  size: 37.0,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: const AlignmentDirectional(0.0, 0.37),
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 8.0, 16.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 69.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(50.0),
-                            border: Border.all(
-                              color: const Color(0xFF0ABD95),
-                              width: 3.0,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 12.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                if (stackPrayerRecord?.fajr == true)
-                                  const Icon(
-                                    Icons.check_circle,
-                                    color: Color(0xFF0ABD95),
-                                    size: 37.0,
-                                  ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      150.0, 16.0, 0.0, 16.0),
-                                  child: Text(
-                                    'صلاة الفجر',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 25.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w300,
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 10.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            if (listViewPrayerRecord?.dhuhr ==
+                                                true)
+                                              const Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 150.0, 0.0),
+                                                child: Icon(
+                                                  Icons.check_circle,
+                                                  color: Color(0xFF0ABD95),
+                                                  size: 37.0,
+                                                ),
+                                              ),
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  1.0, 0.0),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 16.0, 0.0, 16.0),
+                                                child: Text(
+                                                  'صلاة الظهر',
+                                                  textAlign: TextAlign.end,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        fontSize: 25.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w300,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            const Icon(
+                                              Icons.mosque_sharp,
+                                              color: Color(0xFF655DA2),
+                                              size: 37.0,
+                                            ),
+                                          ],
                                         ),
+                                      ),
+                                    ),
                                   ),
                                 ),
-                                const Icon(
-                                  Icons.mosque_sharp,
-                                  color: Color(0xFF575290),
-                                  size: 37.0,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: const AlignmentDirectional(0.0, -0.28),
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 8.0, 16.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 69.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(50.0),
-                            border: Border.all(
-                              color: const Color(0xFF0ABD95),
-                              width: 3.0,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 12.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                if (stackPrayerRecord?.asr == true)
-                                  const Icon(
-                                    Icons.check_circle,
-                                    color: Color(0xFF0ABD95),
-                                    size: 37.0,
-                                  ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      150.0, 16.0, 0.0, 16.0),
-                                  child: Text(
-                                    'صلاة العصر',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 25.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w300,
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, -0.49),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 8.0, 16.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 69.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        border: Border.all(
+                                          color: const Color(0xFF0ABD95),
+                                          width: 3.0,
                                         ),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 10.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            if (listViewPrayerRecord?.asr ==
+                                                true)
+                                              const Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 150.0, 0.0),
+                                                child: Icon(
+                                                  Icons.check_circle,
+                                                  color: Color(0xFF0ABD95),
+                                                  size: 37.0,
+                                                ),
+                                              ),
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  1.0, 0.0),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 16.0, 0.0, 16.0),
+                                                child: Text(
+                                                  'صلاة العصر',
+                                                  textAlign: TextAlign.end,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        fontSize: 25.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w300,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            const Icon(
+                                              Icons.mosque_sharp,
+                                              color: Color(0xFF655DA2),
+                                              size: 37.0,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 ),
-                                const Icon(
-                                  Icons.mosque_sharp,
-                                  color: Color(0xFF575290),
-                                  size: 37.0,
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, -0.49),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 8.0, 16.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 69.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        border: Border.all(
+                                          color: const Color(0xFF0ABD95),
+                                          width: 3.0,
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 10.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            const Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 140.0, 0.0),
+                                              child: Icon(
+                                                Icons.check_circle,
+                                                color: Color(0xFF0ABD95),
+                                                size: 37.0,
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  1.0, 0.0),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 16.0, 0.0, 16.0),
+                                                child: Text(
+                                                  'صلاة المغرب',
+                                                  textAlign: TextAlign.end,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        fontSize: 25.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w300,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            const Icon(
+                                              Icons.mosque_sharp,
+                                              color: Color(0xFF655DA2),
+                                              size: 37.0,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ],
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, -0.49),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 8.0, 16.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 69.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        border: Border.all(
+                                          color: const Color(0xFF0ABD95),
+                                          width: 3.0,
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 10.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            const Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 150.0, 0.0),
+                                              child: Icon(
+                                                Icons.check_circle,
+                                                color: Color(0xFF0ABD95),
+                                                size: 37.0,
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  1.0, 0.0),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 16.0, 0.0, 16.0),
+                                                child: Text(
+                                                  'صلاة العشاء',
+                                                  textAlign: TextAlign.end,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        fontSize: 25.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w300,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            const Icon(
+                                              Icons.mosque_sharp,
+                                              color: Color(0xFF655DA2),
+                                              size: 37.0,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, -0.49),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 8.0, 16.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 69.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        border: Border.all(
+                                          color: const Color(0xFF0ABD95),
+                                          width: 3.0,
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 10.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            const Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 155.0, 0.0),
+                                              child: Icon(
+                                                Icons.check_circle,
+                                                color: Color(0xFF0ABD95),
+                                                size: 37.0,
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  1.0, 0.0),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 16.0, 0.0, 16.0),
+                                                child: Text(
+                                                  'صلاة الفجر',
+                                                  textAlign: TextAlign.end,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        fontSize: 25.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w300,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            const Icon(
+                                              Icons.mosque_sharp,
+                                              color: Color(0xFF655DA2),
+                                              size: 37.0,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ].divide(const SizedBox(height: 10.0)),
                             ),
                           ),
-                        ),
-                      ),
-                    ),
-                  ],
-                );
-              },
-            ),
+                        ],
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

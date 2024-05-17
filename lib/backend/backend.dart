@@ -9,6 +9,8 @@ import 'schema/users_record.dart';
 import 'schema/exercise_record.dart';
 import 'schema/medicene_record.dart';
 import 'schema/prayer_record.dart';
+import 'schema/elderly_record.dart';
+import 'schema/caregivers_record.dart';
 import 'schema/elderly_location_record.dart';
 
 export 'dart:async' show StreamSubscription;
@@ -22,6 +24,8 @@ export 'schema/users_record.dart';
 export 'schema/exercise_record.dart';
 export 'schema/medicene_record.dart';
 export 'schema/prayer_record.dart';
+export 'schema/elderly_record.dart';
+export 'schema/caregivers_record.dart';
 export 'schema/elderly_location_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
@@ -167,6 +171,80 @@ Future<List<PrayerRecord>> queryPrayerRecordOnce({
     queryCollectionOnce(
       PrayerRecord.collection,
       PrayerRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query ElderlyRecords (as a Stream and as a Future).
+Future<int> queryElderlyRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ElderlyRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ElderlyRecord>> queryElderlyRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ElderlyRecord.collection,
+      ElderlyRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ElderlyRecord>> queryElderlyRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ElderlyRecord.collection,
+      ElderlyRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query CaregiversRecords (as a Stream and as a Future).
+Future<int> queryCaregiversRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      CaregiversRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<CaregiversRecord>> queryCaregiversRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      CaregiversRecord.collection,
+      CaregiversRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<CaregiversRecord>> queryCaregiversRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      CaregiversRecord.collection,
+      CaregiversRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

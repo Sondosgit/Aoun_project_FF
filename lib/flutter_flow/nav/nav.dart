@@ -139,9 +139,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const SettingElderlyWidget(),
         ),
         FFRoute(
-          name: 'QRcode',
-          path: '/qRcode',
-          builder: (context, params) => const QRcodeWidget(),
+          name: 'elderlyCode',
+          path: '/elderlyCode',
+          builder: (context, params) => const ElderlyCodeWidget(),
         ),
         FFRoute(
           name: 'EditProfileElderly',
@@ -206,11 +206,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const HomePageCaregiverWidget(),
         ),
         FFRoute(
-          name: 'PrayerCaregiver',
-          path: '/prayerCaregiver',
-          builder: (context, params) => const PrayerCaregiverWidget(),
-        ),
-        FFRoute(
           name: 'MapCaregiver',
           path: '/mapCaregiver',
           builder: (context, params) => const MapCaregiverWidget(),
@@ -271,6 +266,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CreateAccount5',
           path: '/createAccount5',
           builder: (context, params) => const CreateAccount5Widget(),
+        ),
+        FFRoute(
+          name: 'AddMedicineCopy',
+          path: '/addMedicineCopy',
+          builder: (context, params) => const AddMedicineCopyWidget(),
+        ),
+        FFRoute(
+          name: 'PrayerCaregiver',
+          path: '/prayerCaregiver',
+          builder: (context, params) => const PrayerCaregiverWidget(),
+        ),
+        FFRoute(
+          name: 'ChecklistEldelryCopy',
+          path: '/checklistEldelryCopy',
+          builder: (context, params) => const ChecklistEldelryCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
