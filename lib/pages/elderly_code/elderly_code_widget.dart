@@ -55,7 +55,7 @@ class _ElderlyCodeWidgetState extends State<ElderlyCodeWidget> {
                 alignment: const AlignmentDirectional(0.0, 1.07),
                 child: Container(
                   width: 532.0,
-                  height: 120.0,
+                  height: 100.0,
                   decoration: BoxDecoration(
                     color: const Color(0xFF6869D6),
                     borderRadius: BorderRadius.circular(40.0),
@@ -142,7 +142,7 @@ class _ElderlyCodeWidgetState extends State<ElderlyCodeWidget> {
                     valueOrDefault(currentUserDocument?.userID, ''),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Readex Pro',
-                          fontSize: 27.0,
+                          fontSize: 35.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                         ),
@@ -155,7 +155,8 @@ class _ElderlyCodeWidgetState extends State<ElderlyCodeWidget> {
                   ':الرمز الخاص بك',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Readex Pro',
-                        fontSize: 23.0,
+                        color: FlutterFlowTheme.of(context).aounPurple,
+                        fontSize: 35.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
                       ),

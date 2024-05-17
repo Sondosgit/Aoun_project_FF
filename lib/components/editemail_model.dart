@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class EditemailModel extends FlutterFlowModel<EditemailWidget> {
   ///  State fields for stateful widgets in this component.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for newEmail widget.
   FocusNode? newEmailFocusNode;
   TextEditingController? newEmailTextController;

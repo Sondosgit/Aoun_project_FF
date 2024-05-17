@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class EditnameModel extends FlutterFlowModel<EditnameWidget> {
   ///  State fields for stateful widgets in this component.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for newNmae widget.
   FocusNode? newNmaeFocusNode;
   TextEditingController? newNmaeTextController;

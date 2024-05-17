@@ -13,6 +13,14 @@ class AddMedicineModel extends FlutterFlowModel<AddMedicineWidget> {
   FocusNode? medNameFocusNode;
   TextEditingController? medNameTextController;
   String? Function(BuildContext, String?)? medNameTextControllerValidator;
+  String? _medNameTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'الخانة مطلوبة';
+    }
+
+    return null;
+  }
+
   // State field(s) for dose widget.
   String? doseValue;
   FormFieldController<String>? doseValueController;
@@ -25,7 +33,9 @@ class AddMedicineModel extends FlutterFlowModel<AddMedicineWidget> {
   FormFieldController<List<String>>? repValueController;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    medNameTextControllerValidator = _medNameTextControllerValidator;
+  }
 
   @override
   void dispose() {

@@ -8,6 +8,7 @@ class EditMedicineModel extends FlutterFlowModel<EditMedicineWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // State field(s) for medName_up widget.
   FocusNode? medNameUpFocusNode;
   TextEditingController? medNameUpTextController;
@@ -15,11 +16,10 @@ class EditMedicineModel extends FlutterFlowModel<EditMedicineWidget> {
   // State field(s) for dose_up widget.
   String? doseUpValue;
   FormFieldController<String>? doseUpValueController;
-  // State field(s) for time_up widget.
-  FocusNode? timeUpFocusNode;
-  TextEditingController? timeUpTextController;
-  String? Function(BuildContext, String?)? timeUpTextControllerValidator;
   DateTime? datePicked;
+  // State field(s) for time widget.
+  List<String>? timeValue;
+  FormFieldController<List<String>>? timeValueController;
   // State field(s) for rep_up widget.
   List<String>? repUpValue;
   FormFieldController<List<String>>? repUpValueController;
@@ -32,8 +32,5 @@ class EditMedicineModel extends FlutterFlowModel<EditMedicineWidget> {
     unfocusNode.dispose();
     medNameUpFocusNode?.dispose();
     medNameUpTextController?.dispose();
-
-    timeUpFocusNode?.dispose();
-    timeUpTextController?.dispose();
   }
 }

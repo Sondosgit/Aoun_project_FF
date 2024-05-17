@@ -8,7 +8,7 @@ export '/pages/elderly/edit_successfully_elderly/edit_successfully_elderly_widge
 export '/pages/elderly/deletemedicine/deletemedicine_widget.dart'
     show DeletemedicineWidget;
 export '/pages/edit_medicine/edit_medicine_widget.dart' show EditMedicineWidget;
-export '/pages/splash_screen/splash_screen_widget.dart' show SplashScreenWidget;
+export '/splash_screen/splash_screen_widget.dart' show SplashScreenWidget;
 export '/pages/sign_up_users/sign_up_users_widget.dart' show SignUpUsersWidget;
 export '/pages/home_page_elderly/home_page_elderly_widget.dart'
     show HomePageElderlyWidget;

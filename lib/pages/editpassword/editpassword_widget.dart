@@ -98,77 +98,85 @@ class _EditpasswordWidgetState extends State<EditpasswordWidget> {
             ),
           ),
         ),
-        Align(
-          alignment: const AlignmentDirectional(0.27, 0.17),
-          child: FFButtonWidget(
-            onPressed: () async {
-              if (currentUserEmail.isEmpty) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text(
-                      'Email required!',
-                    ),
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Align(
+              alignment: const AlignmentDirectional(-0.29, 0.17),
+              child: FFButtonWidget(
+                onPressed: () async {
+                  context.safePop();
+                },
+                text: 'إلغاء',
+                options: FFButtonOptions(
+                  width: 80.0,
+                  height: 40.0,
+                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  iconPadding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: const Color(0xFF6869D6),
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                        fontFamily: 'Readex Pro',
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        fontSize: 20.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w300,
+                      ),
+                  elevation: 3.0,
+                  borderSide: const BorderSide(
+                    color: Colors.transparent,
+                    width: 1.0,
                   ),
-                );
-                return;
-              }
-              await authManager.resetPassword(
-                email: currentUserEmail,
-                context: context,
-              );
-              context.safePop();
-            },
-            text: 'إرسال',
-            options: FFButtonOptions(
-              width: 80.0,
-              height: 40.0,
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-              color: const Color(0xFF6869D6),
-              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    fontFamily: 'Readex Pro',
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                    fontSize: 20.0,
-                    letterSpacing: 0.0,
-                    fontWeight: FontWeight.w300,
-                  ),
-              elevation: 3.0,
-              borderSide: const BorderSide(
-                color: Colors.transparent,
-                width: 1.0,
+                  borderRadius: BorderRadius.circular(18.0),
+                ),
               ),
-              borderRadius: BorderRadius.circular(18.0),
             ),
-          ),
-        ),
-        Align(
-          alignment: const AlignmentDirectional(-0.29, 0.17),
-          child: FFButtonWidget(
-            onPressed: () async {
-              context.safePop();
-            },
-            text: 'إلغاء',
-            options: FFButtonOptions(
-              width: 80.0,
-              height: 40.0,
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-              color: const Color(0xFF6869D6),
-              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    fontFamily: 'Readex Pro',
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                    fontSize: 20.0,
-                    letterSpacing: 0.0,
-                    fontWeight: FontWeight.w300,
+            Align(
+              alignment: const AlignmentDirectional(0.27, 0.17),
+              child: FFButtonWidget(
+                onPressed: () async {
+                  if (currentUserEmail.isEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                          'Email required!',
+                        ),
+                      ),
+                    );
+                    return;
+                  }
+                  await authManager.resetPassword(
+                    email: currentUserEmail,
+                    context: context,
+                  );
+                  context.safePop();
+                },
+                text: 'إرسال',
+                options: FFButtonOptions(
+                  width: 80.0,
+                  height: 40.0,
+                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  iconPadding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: const Color(0xFF6869D6),
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                        fontFamily: 'Readex Pro',
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        fontSize: 20.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w300,
+                      ),
+                  elevation: 3.0,
+                  borderSide: const BorderSide(
+                    color: Colors.transparent,
+                    width: 1.0,
                   ),
-              elevation: 3.0,
-              borderSide: const BorderSide(
-                color: Colors.transparent,
-                width: 1.0,
+                  borderRadius: BorderRadius.circular(18.0),
+                ),
               ),
-              borderRadius: BorderRadius.circular(18.0),
             ),
-          ),
+          ],
         ),
       ],
     );

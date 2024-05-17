@@ -76,7 +76,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 77.0, 0.0, 0.0),
                                 child: Text(
-                                  'تغير كلمة المرور',
+                                  'تغيير كلمة المرور',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -86,6 +86,27 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w300,
                                       ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 8.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.safePop();
+                                  },
+                                  child: const Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Color(0xFF6869D6),
+                                    size: 40.0,
+                                  ),
                                 ),
                               ),
                             ),

@@ -843,7 +843,7 @@ class _ChecklistElderlyWidgetState extends State<ChecklistElderlyWidget> {
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 52.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -856,7 +856,7 @@ class _ChecklistElderlyWidgetState extends State<ChecklistElderlyWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('HomePageElderly');
+                              context.pushNamed('elderlyCode');
                             },
                             child: const Icon(
                               Icons.people_alt_rounded,
@@ -873,7 +873,7 @@ class _ChecklistElderlyWidgetState extends State<ChecklistElderlyWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('elderlyCode');
+                              context.pushNamed('HomePageElderly');
                             },
                             child: const Icon(
                               Icons.home_sharp,

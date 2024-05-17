@@ -445,7 +445,7 @@ class _SignUpUsersWidgetState extends State<SignUpUsersWidget> {
                               Align(
                                 alignment: const AlignmentDirectional(0.91, 0.52),
                                 child: Text(
-                                  'اختر نوع المستخدم',
+                                  'هل أنت مقدم رعاية؟',
                                   textAlign: TextAlign.end,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -461,11 +461,11 @@ class _SignUpUsersWidgetState extends State<SignUpUsersWidget> {
                               Align(
                                 alignment: const AlignmentDirectional(0.91, 0.71),
                                 child: FlutterFlowRadioButton(
-                                  options: ['كبير سن', 'مقدم رعاية'].toList(),
+                                  options: ['نعم', 'لا'].toList(),
                                   onChanged: (val) => setState(() {}),
-                                  controller: _model
-                                          .radioButtonValueController ??=
-                                      FormFieldController<String>('كبير سن'),
+                                  controller:
+                                      _model.radioButtonValueController ??=
+                                          FormFieldController<String>('لا'),
                                   optionHeight: 35.0,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .bodyLarge
@@ -535,7 +535,7 @@ class _SignUpUsersWidgetState extends State<SignUpUsersWidget> {
                                   ));
 
                               await authManager.sendEmailVerification();
-                              if (_model.radioButtonValue == 'كبير سن') {
+                              if (_model.radioButtonValue == 'لا') {
                                 context.goNamedAuth(
                                     'HomePageElderly', context.mounted);
 

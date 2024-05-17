@@ -424,7 +424,7 @@ class _SignInUsersWidgetState extends State<SignInUsersWidget> {
 
                               if (valueOrDefault(
                                       currentUserDocument?.userType, '') ==
-                                  'كبير سن') {
+                                  'لا') {
                                 context.pushNamedAuth(
                                     'HomePageElderly', context.mounted);
                               } else {

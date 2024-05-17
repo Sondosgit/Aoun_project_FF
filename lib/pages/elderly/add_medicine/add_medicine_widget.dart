@@ -510,6 +510,50 @@ class _AddMedicineWidgetState extends State<AddMedicineWidget> {
                                   !_model.formKey.currentState!.validate()) {
                                 return;
                               }
+                              if (_model.doseValue == null) {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: const Text('خطأ'),
+                                      content: const Text('قم باختيار عدد الجرعات'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: const Text('حسنا'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                                return;
+                              }
+                              if (_model.datePicked == null) {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: const Text('خطأ'),
+                                      content: const Text('رجاء قم باختيار الوقت'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: const Text('حسنا'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                                return;
+                              }
+                              if (_model.timeValue == null) {
+                                return;
+                              }
+                              if (_model.repValue == null) {
+                                return;
+                              }
 
                               await MediceneRecord.collection.doc().set({
                                 ...createMediceneRecordData(
