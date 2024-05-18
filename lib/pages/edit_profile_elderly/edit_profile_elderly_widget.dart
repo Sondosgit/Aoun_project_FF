@@ -112,7 +112,7 @@ class _EditProfileElderlyWidgetState extends State<EditProfileElderlyWidget> {
                         Align(
                           alignment: const AlignmentDirectional(0.94, -0.12),
                           child: Text(
-                            'الايميل',
+                            'البريد الالكتروني',
                             textAlign: TextAlign.end,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium

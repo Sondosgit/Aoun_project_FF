@@ -341,16 +341,18 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
                                           children: [
-                                            const Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 140.0, 0.0),
-                                              child: Icon(
-                                                Icons.check_circle,
-                                                color: Color(0xFF0ABD95),
-                                                size: 37.0,
+                                            if (listViewPrayerRecord?.maghrib ==
+                                                true)
+                                              const Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 140.0, 0.0),
+                                                child: Icon(
+                                                  Icons.check_circle,
+                                                  color: Color(0xFF0ABD95),
+                                                  size: 37.0,
+                                                ),
                                               ),
-                                            ),
                                             Align(
                                               alignment: const AlignmentDirectional(
                                                   1.0, 0.0),
@@ -412,16 +414,18 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
                                           children: [
-                                            const Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 150.0, 0.0),
-                                              child: Icon(
-                                                Icons.check_circle,
-                                                color: Color(0xFF0ABD95),
-                                                size: 37.0,
+                                            if (listViewPrayerRecord?.isha ==
+                                                true)
+                                              const Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 150.0, 0.0),
+                                                child: Icon(
+                                                  Icons.check_circle,
+                                                  color: Color(0xFF0ABD95),
+                                                  size: 37.0,
+                                                ),
                                               ),
-                                            ),
                                             Align(
                                               alignment: const AlignmentDirectional(
                                                   1.0, 0.0),
@@ -483,16 +487,18 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
                                           children: [
-                                            const Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 155.0, 0.0),
-                                              child: Icon(
-                                                Icons.check_circle,
-                                                color: Color(0xFF0ABD95),
-                                                size: 37.0,
+                                            if (listViewPrayerRecord?.fajr ==
+                                                true)
+                                              const Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 155.0, 0.0),
+                                                child: Icon(
+                                                  Icons.check_circle,
+                                                  color: Color(0xFF0ABD95),
+                                                  size: 37.0,
+                                                ),
                                               ),
-                                            ),
                                             Align(
                                               alignment: const AlignmentDirectional(
                                                   1.0, 0.0),
