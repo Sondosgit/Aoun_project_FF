@@ -548,12 +548,6 @@ class _AddMedicineWidgetState extends State<AddMedicineWidget> {
                                 );
                                 return;
                               }
-                              if (_model.timeValue == null) {
-                                return;
-                              }
-                              if (_model.repValue == null) {
-                                return;
-                              }
 
                               await MediceneRecord.collection.doc().set({
                                 ...createMediceneRecordData(
