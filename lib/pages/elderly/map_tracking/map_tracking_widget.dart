@@ -143,6 +143,15 @@ class _MapTrackingWidgetState extends State<MapTrackingWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  currentUserLocationValue =
+                                      await getCurrentUserLocation(
+                                          defaultLocation: const LatLng(0.0, 0.0));
+
+                                  await columnElderlyLocationRecord!.reference
+                                      .update(createElderlyLocationRecordData(
+                                    elderlyCurrentLoc: currentUserLocationValue,
+                                  ));
+
                                   context.pushNamed('HomePageElderly');
                                 },
                                 child: const Icon(
