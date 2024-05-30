@@ -407,7 +407,7 @@ class _AddMedicineWidgetState extends State<AddMedicineWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-0.8, -0.03),
+                                            const AlignmentDirectional(0.78, -1.34),
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(

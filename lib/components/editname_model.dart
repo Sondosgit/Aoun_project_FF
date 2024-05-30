@@ -10,9 +10,18 @@ class EditnameModel extends FlutterFlowModel<EditnameWidget> {
   FocusNode? newNmaeFocusNode;
   TextEditingController? newNmaeTextController;
   String? Function(BuildContext, String?)? newNmaeTextControllerValidator;
+  String? _newNmaeTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'الرجاء إدخال الاسم';
+    }
+
+    return null;
+  }
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    newNmaeTextControllerValidator = _newNmaeTextControllerValidator;
+  }
 
   @override
   void dispose() {

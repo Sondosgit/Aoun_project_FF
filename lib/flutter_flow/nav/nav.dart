@@ -258,11 +258,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'CreateAccount5',
-          path: '/createAccount5',
-          builder: (context, params) => const CreateAccount5Widget(),
-        ),
-        FFRoute(
           name: 'PrayerCaregiver',
           path: '/prayerCaregiver',
           builder: (context, params) => const PrayerCaregiverWidget(),

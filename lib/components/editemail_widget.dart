@@ -188,33 +188,12 @@ class _EditemailWidgetState extends State<EditemailWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.27, 0.17),
+                            alignment: const AlignmentDirectional(-0.3, 0.16),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                if (_model.newEmailTextController.text != '') {
-                                  if (_model
-                                      .newEmailTextController.text.isEmpty) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                        content: Text(
-                                          'Email required!',
-                                        ),
-                                      ),
-                                    );
-                                    return;
-                                  }
-
-                                  await authManager.updateEmail(
-                                    email: _model.newEmailTextController.text,
-                                    context: context,
-                                  );
-                                  setState(() {});
-
-                                  await authManager.sendEmailVerification();
-                                  context.safePop();
-                                }
+                                context.safePop();
                               },
-                              text: 'حفظ',
+                              text: 'إلغاء',
                               options: FFButtonOptions(
                                 width: 80.0,
                                 height: 40.0,
@@ -243,12 +222,34 @@ class _EditemailWidgetState extends State<EditemailWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(-0.3, 0.16),
+                            alignment: const AlignmentDirectional(0.27, 0.17),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                context.safePop();
+                                if (_model.formKey.currentState == null ||
+                                    !_model.formKey.currentState!.validate()) {
+                                  return;
+                                }
+                                if (_model
+                                    .newEmailTextController.text.isEmpty) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text(
+                                        'Email required!',
+                                      ),
+                                    ),
+                                  );
+                                  return;
+                                }
+
+                                await authManager.updateEmail(
+                                  email: _model.newEmailTextController.text,
+                                  context: context,
+                                );
+                                setState(() {});
+
+                                await authManager.sendEmailVerification();
                               },
-                              text: 'إلغاء',
+                              text: 'حفظ',
                               options: FFButtonOptions(
                                 width: 80.0,
                                 height: 40.0,

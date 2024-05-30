@@ -354,7 +354,7 @@ class _EditProfileCaregiverfWidgetState
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('SettingElderly');
+                        context.pushNamed('SettingCaregiver');
                       },
                       child: const Icon(
                         Icons.arrow_forward_ios,

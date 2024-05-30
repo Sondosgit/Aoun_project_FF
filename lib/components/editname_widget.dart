@@ -178,37 +178,12 @@ class _EditnameWidgetState extends State<EditnameWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.27, 0.17),
+                          alignment: const AlignmentDirectional(-0.3, 0.16),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              if (_model.newNmaeTextController.text != '') {
-                                await widget.userRef!
-                                    .update(createUsersRecordData(
-                                  displayName:
-                                      _model.newNmaeTextController.text,
-                                ));
-                                context.safePop();
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'تم تعديل الاسم بنجاح',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                    duration: const Duration(milliseconds: 4000),
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).secondary,
-                                  ),
-                                );
-                              }
+                              context.safePop();
                             },
-                            text: 'حفظ',
+                            text: 'إلغاء',
                             options: FFButtonOptions(
                               width: 80.0,
                               height: 40.0,
@@ -237,12 +212,30 @@ class _EditnameWidgetState extends State<EditnameWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-0.3, 0.16),
+                          alignment: const AlignmentDirectional(0.27, 0.17),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              await widget.userRef!
+                                  .update(createUsersRecordData(
+                                displayName: _model.newNmaeTextController.text,
+                              ));
                               context.safePop();
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    'تم تعديل الاسم بنجاح',
+                                    style: TextStyle(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
+                                  ),
+                                  duration: const Duration(milliseconds: 4000),
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).secondary,
+                                ),
+                              );
                             },
-                            text: 'إلغاء',
+                            text: 'حفظ',
                             options: FFButtonOptions(
                               width: 80.0,
                               height: 40.0,

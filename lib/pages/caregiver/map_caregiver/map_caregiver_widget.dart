@@ -103,7 +103,6 @@ class _MapCaregiverWidgetState extends State<MapCaregiverWidget> {
                                       color: const Color(0xFF6869D6),
                                       fontSize: 30.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w300,
                                     ),
                               ),
                             ),

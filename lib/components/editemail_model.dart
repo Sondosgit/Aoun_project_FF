@@ -10,9 +10,21 @@ class EditemailModel extends FlutterFlowModel<EditemailWidget> {
   FocusNode? newEmailFocusNode;
   TextEditingController? newEmailTextController;
   String? Function(BuildContext, String?)? newEmailTextControllerValidator;
+  String? _newEmailTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'البريد الالكتروني مطلوب';
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'تحقق من الصيغة';
+    }
+    return null;
+  }
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    newEmailTextControllerValidator = _newEmailTextControllerValidator;
+  }
 
   @override
   void dispose() {

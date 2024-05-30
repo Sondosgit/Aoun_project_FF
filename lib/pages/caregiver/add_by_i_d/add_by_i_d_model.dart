@@ -6,13 +6,23 @@ class AddByIDModel extends FlutterFlowModel<AddByIDWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // State field(s) for IDelderly widget.
   FocusNode? iDelderlyFocusNode;
   TextEditingController? iDelderlyTextController;
   String? Function(BuildContext, String?)? iDelderlyTextControllerValidator;
+  String? _iDelderlyTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'إضافة الرمز مطلوبة';
+    }
+
+    return null;
+  }
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    iDelderlyTextControllerValidator = _iDelderlyTextControllerValidator;
+  }
 
   @override
   void dispose() {

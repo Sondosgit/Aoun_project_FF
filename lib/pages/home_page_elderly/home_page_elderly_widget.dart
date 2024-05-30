@@ -343,7 +343,7 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.01, -1.01),
+                    alignment: const AlignmentDirectional(-1.0, -0.91),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,

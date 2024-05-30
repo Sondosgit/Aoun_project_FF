@@ -52,7 +52,6 @@ export '/pages/caregiver/med_caregiver/med_caregiver_widget.dart'
     show MedCaregiverWidget;
 export '/pages/caregiver/edit_profile_caregiverf/edit_profile_caregiverf_widget.dart'
     show EditProfileCaregiverfWidget;
-export '/create_account5/create_account5_widget.dart' show CreateAccount5Widget;
 export '/pages/caregiver/prayer_caregiver/prayer_caregiver_widget.dart'
     show PrayerCaregiverWidget;
 export '/pages/checklist_elderly/checklist_elderly_widget.dart'
