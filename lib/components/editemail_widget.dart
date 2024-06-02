@@ -252,7 +252,7 @@ class _EditemailWidgetState extends State<EditemailWidget> {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
-                                      'لاعتماد البريد قم بتفعيله  عبر الرابط المرسل',
+                                      'لاعتماد البريد قم بتفعيله عبر الرابط المرسل',
                                       style: TextStyle(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,

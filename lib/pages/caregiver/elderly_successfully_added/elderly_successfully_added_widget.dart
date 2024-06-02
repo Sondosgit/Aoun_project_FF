@@ -83,7 +83,7 @@ class _ElderlySuccessfullyAddedWidgetState
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          'تم إنشاء الحساب بنجاح! قم بتفعيل البريد الخاص بك عبر رابط التفعيل',
+                          'تم إنشاء الحساب بنجاح! قم بتفعيل البريد الخاص بك عبر رابط التفعيل المرسل',
                           style: TextStyle(
                             color: FlutterFlowTheme.of(context).primaryText,
                           ),
