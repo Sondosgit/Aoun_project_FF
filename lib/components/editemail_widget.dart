@@ -248,6 +248,21 @@ class _EditemailWidgetState extends State<EditemailWidget> {
                                 setState(() {});
 
                                 await authManager.sendEmailVerification();
+                                context.safePop();
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'لاعتماد البريد قم بتفعيله  عبر الرابط المرسل',
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                    ),
+                                    duration: const Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).secondary,
+                                  ),
+                                );
                               },
                               text: 'حفظ',
                               options: FFButtonOptions(

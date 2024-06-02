@@ -176,16 +176,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ForgetPasswordWidget(),
         ),
         FFRoute(
-          name: 'SignInCargiver',
-          path: '/signInCargiver',
-          builder: (context, params) => const SignInCargiverWidget(),
-        ),
-        FFRoute(
-          name: 'SignUpCaregiver',
-          path: '/signUpCaregiver',
-          builder: (context, params) => const SignUpCaregiverWidget(),
-        ),
-        FFRoute(
           name: 'AddElderly',
           path: '/addElderly',
           builder: (context, params) => const AddElderlyWidget(),

@@ -88,12 +88,10 @@ class _GameWidgetState extends State<GameWidget> {
 
                             _model.timerController.onResetTimer();
 
-                            setState(() {
-                              FFAppState().isStarted = false;
-                            });
-                            setState(() {
-                              FFAppState().moves = 0;
-                            });
+                            FFAppState().isStarted = false;
+                            setState(() {});
+                            FFAppState().moves = 0;
+                            setState(() {});
                           },
                           child: const Icon(
                             Icons.arrow_forward_ios,
@@ -196,31 +194,27 @@ class _GameWidgetState extends State<GameWidget> {
                                       currentPuzzleListItem),
                                   FFAppState().moves,
                                 );
-                                setState(() {
-                                  FFAppState().puzzleNum = getJsonField(
-                                    _model.listMovesMap,
-                                    r'''$.list''',
-                                    true,
-                                  )!
-                                      .toList()
-                                      .cast<int>();
-                                });
-                                setState(() {
-                                  FFAppState().moves = getJsonField(
-                                    _model.listMovesMap,
-                                    r'''$.moves''',
-                                  );
-                                });
+                                FFAppState().puzzleNum = getJsonField(
+                                  _model.listMovesMap,
+                                  r'''$.list''',
+                                  true,
+                                )!
+                                    .toList()
+                                    .cast<int>();
+                                setState(() {});
+                                FFAppState().moves = getJsonField(
+                                  _model.listMovesMap,
+                                  r'''$.moves''',
+                                );
+                                setState(() {});
                                 _model.isSolved = actions.isSolved(
                                   FFAppState().puzzleNum.toList(),
                                 );
-                                setState(() {
-                                  FFAppState().isStarted =
-                                      _model.isSolved == true ? false : true;
-                                });
-                                setState(() {
-                                  FFAppState().TimeResult = _model.timerValue;
-                                });
+                                FFAppState().isStarted =
+                                    _model.isSolved == true ? false : true;
+                                setState(() {});
+                                FFAppState().TimeResult = _model.timerValue;
+                                setState(() {});
                                 if (_model.isSolved == true) {
                                   _model.timerController.onStopTimer();
                                   _model.timerController.timer.setPresetTime(
@@ -272,17 +266,14 @@ class _GameWidgetState extends State<GameWidget> {
                       onPressed: () async {
                         _model.shuffledpuzzleList =
                             await actions.shufflepuzzle();
-                        setState(() {
-                          FFAppState().puzzleNum =
-                              _model.shuffledpuzzleList!.toList().cast<int>();
-                        });
-                        setState(() {
-                          FFAppState().isStarted = true;
-                        });
+                        FFAppState().puzzleNum =
+                            _model.shuffledpuzzleList!.toList().cast<int>();
+                        setState(() {});
+                        FFAppState().isStarted = true;
+                        setState(() {});
                         _model.timerController.onStartTimer();
-                        setState(() {
-                          FFAppState().moves = 0;
-                        });
+                        FFAppState().moves = 0;
+                        setState(() {});
 
                         setState(() {});
                       },

@@ -82,7 +82,8 @@ class _AddByIDWidgetState extends State<AddByIDWidget> {
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: Text(
-                              ':أدخل الرمز الخاص به',
+                              'لمتابعة المسن الذي تعتني به \n:أدخل الرمز الخاص به',
+                              textAlign: TextAlign.end,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -91,6 +92,7 @@ class _AddByIDWidgetState extends State<AddByIDWidget> {
                                     fontSize: 20.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w300,
+                                    lineHeight: 1.5,
                                   ),
                             ),
                           ),
@@ -163,24 +165,36 @@ class _AddByIDWidgetState extends State<AddByIDWidget> {
                           alignment: const AlignmentDirectional(0.0, 1.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              if (!(_model.iDelderlyTextController.text != '')) {
-                                await showDialog(
-                                  context: context,
-                                  builder: (alertDialogContext) {
-                                    return AlertDialog(
-                                      title: const Text('تنبيه'),
-                                      content: const Text(
-                                          'للاستمرار عليك إدخال رمز كبير السن'),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(alertDialogContext),
-                                          child: const Text('حسنًا'),
-                                        ),
-                                      ],
-                                    );
-                                  },
+                              var shouldSetState = false;
+                              if (_model.formKey.currentState == null ||
+                                  !_model.formKey.currentState!.validate()) {
+                                return;
+                              }
+                              _model.action1 = await queryUsersRecordOnce(
+                                queryBuilder: (usersRecord) =>
+                                    usersRecord.where(
+                                  'UserID',
+                                  isEqualTo:
+                                      _model.iDelderlyTextController.text,
+                                ),
+                              );
+                              shouldSetState = true;
+                              if (_model.action1?.length != 1) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'الرمز المدخل غير صحيح',
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                    ),
+                                    duration: const Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).error,
+                                  ),
                                 );
+                                if (shouldSetState) setState(() {});
                                 return;
                               }
 
@@ -191,6 +205,8 @@ class _AddByIDWidgetState extends State<AddByIDWidget> {
                               ));
 
                               context.pushNamed('ElderlySuccessfullyAdded');
+
+                              if (shouldSetState) setState(() {});
                             },
                             text: 'إضافة',
                             options: FFButtonOptions(

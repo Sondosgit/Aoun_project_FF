@@ -71,9 +71,7 @@ class FirebaseAuthManager extends AuthManager
       if (e.code == 'requires-recent-login') {
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text(
-                  'Too long since most recent sign in. Sign in again before deleting your account.')),
+          const SnackBar(content: Text('فضلاً.. قم بتسجيل دخولك مجددا')),
         );
       }
     }
@@ -95,9 +93,7 @@ class FirebaseAuthManager extends AuthManager
       if (e.code == 'requires-recent-login') {
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text(
-                  'Too long since most recent sign in. Sign in again before updating your email.')),
+          const SnackBar(content: Text('فضلاً.. قم بتسجيل دخولك مجددا')),
         );
       }
     }

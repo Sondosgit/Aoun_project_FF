@@ -215,6 +215,11 @@ class _EditnameWidgetState extends State<EditnameWidget> {
                           alignment: const AlignmentDirectional(0.27, 0.17),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              if (_model.formKey.currentState == null ||
+                                  !_model.formKey.currentState!.validate()) {
+                                return;
+                              }
+
                               await widget.userRef!
                                   .update(createUsersRecordData(
                                 displayName: _model.newNmaeTextController.text,

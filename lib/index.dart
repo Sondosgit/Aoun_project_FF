@@ -24,10 +24,6 @@ export '/pages/elderly/game/game_widget.dart' show GameWidget;
 export '/pages/game_result/game_result_widget.dart' show GameResultWidget;
 export '/pages/forget_password/forget_password_widget.dart'
     show ForgetPasswordWidget;
-export '/sign_in_cargiver/sign_in_cargiver_widget.dart'
-    show SignInCargiverWidget;
-export '/sign_up_caregiver/sign_up_caregiver_widget.dart'
-    show SignUpCaregiverWidget;
 export '/pages/caregiver/add_elderly/add_elderly_widget.dart'
     show AddElderlyWidget;
 export '/pages/setting_caregiver/setting_caregiver_widget.dart'

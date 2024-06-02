@@ -76,7 +76,7 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
               child: Stack(
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(1.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -95,7 +95,7 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                                   .override(
                                     fontFamily: 'Readex Pro',
                                     color: const Color(0xFF3B3F3F),
-                                    fontSize: 30.0,
+                                    fontSize: 35.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w300,
                                   ),
@@ -111,7 +111,7 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                                 .override(
                                   fontFamily: 'Readex Pro',
                                   color: const Color(0xFF3B3F3F),
-                                  fontSize: 30.0,
+                                  fontSize: 35.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w300,
                                 ),
@@ -343,7 +343,7 @@ class _HomePageElderlyWidgetState extends State<HomePageElderlyWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, -0.91),
+                    alignment: const AlignmentDirectional(-0.97, -1.01),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,

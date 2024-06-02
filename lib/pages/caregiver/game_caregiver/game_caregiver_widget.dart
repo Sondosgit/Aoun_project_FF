@@ -125,9 +125,9 @@ class _GameCaregiverWidgetState extends State<GameCaregiverWidget> {
                       alignment: const AlignmentDirectional(0.09, -0.23),
                       child: CircularPercentIndicator(
                         percent: () {
-                          if (stackExerciseRecord!.moves <= 120) {
+                          if (stackExerciseRecord!.moves >= 120) {
                             return 1.0;
-                          } else if (stackExerciseRecord.moves <= 170) {
+                          } else if (stackExerciseRecord.moves >= 170) {
                             return 0.5;
                           } else {
                             return 0.25;
@@ -140,16 +140,19 @@ class _GameCaregiverWidgetState extends State<GameCaregiverWidget> {
                         progressColor: FlutterFlowTheme.of(context).primary,
                         backgroundColor: FlutterFlowTheme.of(context).accent4,
                         center: Text(
-                          () {
-                            if (stackExerciseRecord!.moves <= 70) {
-                              return 100.0;
-                            } else if (stackExerciseRecord.moves <= 120) {
-                              return 50.0;
-                            } else {
-                              return 30.0;
-                            }
-                          }()
-                              .toString(),
+                          valueOrDefault<String>(
+                            () {
+                              if (stackExerciseRecord!.moves >= 70) {
+                                return 100.0;
+                              } else if (stackExerciseRecord.moves >= 120) {
+                                return 50.0;
+                              } else {
+                                return 30.0;
+                              }
+                            }()
+                                .toString(),
+                            '0',
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(

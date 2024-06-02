@@ -235,8 +235,8 @@ class _AddMedicineWidgetState extends State<AddMedicineWidget> {
                                     controller: _model.doseValueController ??=
                                         FormFieldController<String>(null),
                                     options: const [
-                                      '💊     جرعة                                                                    ',
-                                      '💊    💊   جرعتان            ',
+                                      '💊  جرعة  ',
+                                      '💊    💊   جرعتان',
                                       ' 💊    💊    💊   ٣ جرعات'
                                     ],
                                     onChanged: (val) =>

@@ -539,6 +539,21 @@ class _SignUpUsersWidgetState extends State<SignUpUsersWidget> {
                                 context.goNamedAuth(
                                     'HomePageElderly', context.mounted);
 
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'تم إنشاء الحساب بنجاح! قم بتفعيل البريد الخاص بك عبر رابط التفعيل',
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                    ),
+                                    duration: const Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).secondary,
+                                  ),
+                                );
+
                                 await currentUserReference!
                                     .update(createUsersRecordData(
                                   userID: random_data.randomString(
@@ -584,21 +599,6 @@ class _SignUpUsersWidgetState extends State<SignUpUsersWidget> {
                                 context.pushNamedAuth(
                                     'AddElderly', context.mounted);
                               }
-
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'تم إنشاء الحساب بنجاح! قم بتفعيل البريد الخاص بك عبر رابط التفعيل',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
                             },
                             text: 'تسجيل',
                             options: FFButtonOptions(

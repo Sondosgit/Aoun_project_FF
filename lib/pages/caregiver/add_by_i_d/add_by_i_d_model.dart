@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'add_by_i_d_widget.dart' show AddByIDWidget;
 import 'package:flutter/material.dart';
@@ -18,6 +19,9 @@ class AddByIDModel extends FlutterFlowModel<AddByIDWidget> {
 
     return null;
   }
+
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<UsersRecord>? action1;
 
   @override
   void initState(BuildContext context) {
