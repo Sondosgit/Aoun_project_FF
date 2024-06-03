@@ -122,7 +122,7 @@ class _PrayerElderlyWidgetState extends State<PrayerElderlyWidget> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 8.0, 8.0, 8.0),
+                                        5.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -183,7 +183,7 @@ class _PrayerElderlyWidgetState extends State<PrayerElderlyWidget> {
                                                 BorderRadius.circular(12.0),
                                             child: Image.asset(
                                               'assets/images/fajr.png',
-                                              width: 60.0,
+                                              width: 50.0,
                                               height: 60.0,
                                               fit: BoxFit.contain,
                                             ),
@@ -217,7 +217,7 @@ class _PrayerElderlyWidgetState extends State<PrayerElderlyWidget> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 8.0, 8.0, 8.0),
+                                        5.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -271,7 +271,7 @@ class _PrayerElderlyWidgetState extends State<PrayerElderlyWidget> {
                                                 BorderRadius.circular(12.0),
                                             child: Image.asset(
                                               'assets/images/asr.png',
-                                              width: 60.0,
+                                              width: 50.0,
                                               height: 60.0,
                                               fit: BoxFit.fitWidth,
                                             ),
@@ -305,7 +305,7 @@ class _PrayerElderlyWidgetState extends State<PrayerElderlyWidget> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 8.0, 8.0, 8.0),
+                                        5.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -359,7 +359,7 @@ class _PrayerElderlyWidgetState extends State<PrayerElderlyWidget> {
                                                 BorderRadius.circular(12.0),
                                             child: Image.asset(
                                               'assets/images/duhr.png',
-                                              width: 60.0,
+                                              width: 50.0,
                                               height: 60.0,
                                               fit: BoxFit.fitWidth,
                                             ),
@@ -393,7 +393,7 @@ class _PrayerElderlyWidgetState extends State<PrayerElderlyWidget> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 8.0, 8.0, 8.0),
+                                        5.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -447,7 +447,7 @@ class _PrayerElderlyWidgetState extends State<PrayerElderlyWidget> {
                                                 BorderRadius.circular(12.0),
                                             child: Image.asset(
                                               'assets/images/mug.png',
-                                              width: 50.0,
+                                              width: 40.0,
                                               height: 50.0,
                                               fit: BoxFit.fitWidth,
                                             ),
@@ -481,7 +481,7 @@ class _PrayerElderlyWidgetState extends State<PrayerElderlyWidget> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 8.0, 8.0, 8.0),
+                                        5.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -535,7 +535,7 @@ class _PrayerElderlyWidgetState extends State<PrayerElderlyWidget> {
                                                 BorderRadius.circular(12.0),
                                             child: Image.asset(
                                               'assets/images/isha.png',
-                                              width: 60.0,
+                                              width: 50.0,
                                               height: 60.0,
                                               fit: BoxFit.fitWidth,
                                             ),

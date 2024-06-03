@@ -29,8 +29,8 @@ class Asr extends StatefulWidget {
 class _AsrState extends State<Asr> {
   Geolocator location = new Geolocator();
   Position? position;
-  double latitude = 21.485811;
-  double longitude = 39.192505;
+  double latitude = 24.713552;
+  double longitude = 46.675297;
   late DateTime asr;
 
   @override
@@ -46,13 +46,13 @@ class _AsrState extends State<Asr> {
                     );
                   }
 
-                  final myCoordinates = Coordinates(24.713552,
-                      46.675297); // Replace with your own location lat, lng.
+                  final myCoordinates = Coordinates(latitude,
+                      longitude); // Replace with your own location lat, lng.
                   final params = CalculationMethod.umm_al_qura.getParameters();
                   params.madhab = Madhab.hanafi;
                   final prayerTimes = PrayerTimes.today(myCoordinates, params);
                   asr =
-                      prayerTimes.asr.subtract(Duration(hours: 1, minutes: 13));
+                      prayerTimes.asr.subtract(Duration(hours: 1, minutes: 20));
                   return Text(DateFormat.jm().format(asr),
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.w200));

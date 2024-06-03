@@ -197,14 +197,16 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                           children: [
                                             if (listViewPrayerRecord?.dhuhr ==
                                                 true)
-                                              const Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 150.0, 0.0),
-                                                child: Icon(
-                                                  Icons.check_circle,
-                                                  color: Color(0xFF0ABD95),
-                                                  size: 37.0,
+                                              const Expanded(
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          -1.0, 0.0),
+                                                  child: Icon(
+                                                    Icons.check_circle,
+                                                    color: Color(0xFF0ABD95),
+                                                    size: 37.0,
+                                                  ),
                                                 ),
                                               ),
                                             Align(
@@ -213,7 +215,7 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                               child: Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 16.0, 0.0, 16.0),
+                                                        0.0, 16.0, 11.0, 16.0),
                                                 child: Text(
                                                   'صلاة الظهر',
                                                   textAlign: TextAlign.end,
@@ -270,14 +272,16 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                           children: [
                                             if (listViewPrayerRecord?.asr ==
                                                 true)
-                                              const Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 150.0, 0.0),
-                                                child: Icon(
-                                                  Icons.check_circle,
-                                                  color: Color(0xFF0ABD95),
-                                                  size: 37.0,
+                                              const Expanded(
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          -1.0, 0.0),
+                                                  child: Icon(
+                                                    Icons.check_circle,
+                                                    color: Color(0xFF0ABD95),
+                                                    size: 37.0,
+                                                  ),
                                                 ),
                                               ),
                                             Align(
@@ -286,7 +290,7 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                               child: Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 16.0, 0.0, 16.0),
+                                                        0.0, 16.0, 11.0, 16.0),
                                                 child: Text(
                                                   'صلاة العصر',
                                                   textAlign: TextAlign.end,
@@ -343,14 +347,16 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                           children: [
                                             if (listViewPrayerRecord?.maghrib ==
                                                 true)
-                                              const Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 140.0, 0.0),
-                                                child: Icon(
-                                                  Icons.check_circle,
-                                                  color: Color(0xFF0ABD95),
-                                                  size: 37.0,
+                                              const Expanded(
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          -1.0, 0.0),
+                                                  child: Icon(
+                                                    Icons.check_circle,
+                                                    color: Color(0xFF0ABD95),
+                                                    size: 37.0,
+                                                  ),
                                                 ),
                                               ),
                                             Align(
@@ -359,7 +365,7 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                               child: Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 16.0, 0.0, 16.0),
+                                                        0.0, 16.0, 11.0, 16.0),
                                                 child: Text(
                                                   'صلاة المغرب',
                                                   textAlign: TextAlign.end,
@@ -416,14 +422,16 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                           children: [
                                             if (listViewPrayerRecord?.isha ==
                                                 true)
-                                              const Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 150.0, 0.0),
-                                                child: Icon(
-                                                  Icons.check_circle,
-                                                  color: Color(0xFF0ABD95),
-                                                  size: 37.0,
+                                              const Expanded(
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          -1.0, 0.0),
+                                                  child: Icon(
+                                                    Icons.check_circle,
+                                                    color: Color(0xFF0ABD95),
+                                                    size: 37.0,
+                                                  ),
                                                 ),
                                               ),
                                             Align(
@@ -432,7 +440,7 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                               child: Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 16.0, 0.0, 16.0),
+                                                        0.0, 16.0, 11.0, 16.0),
                                                 child: Text(
                                                   'صلاة العشاء',
                                                   textAlign: TextAlign.end,
@@ -489,14 +497,16 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                           children: [
                                             if (listViewPrayerRecord?.fajr ==
                                                 true)
-                                              const Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 155.0, 0.0),
-                                                child: Icon(
-                                                  Icons.check_circle,
-                                                  color: Color(0xFF0ABD95),
-                                                  size: 37.0,
+                                              const Expanded(
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          -1.0, 0.0),
+                                                  child: Icon(
+                                                    Icons.check_circle,
+                                                    color: Color(0xFF0ABD95),
+                                                    size: 37.0,
+                                                  ),
                                                 ),
                                               ),
                                             Align(
@@ -505,7 +515,7 @@ class _PrayerCaregiverWidgetState extends State<PrayerCaregiverWidget> {
                                               child: Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 16.0, 0.0, 16.0),
+                                                        0.0, 16.0, 11.0, 16.0),
                                                 child: Text(
                                                   'صلاة الفجر',
                                                   textAlign: TextAlign.end,

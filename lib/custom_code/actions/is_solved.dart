@@ -13,7 +13,10 @@ import 'package:flutter/foundation.dart';
 
 bool isSolved(List<int> board) {
   List<int> solvedList = [1, 2, 3, 4, 5, 6, 7, 8, 0];
-  return listEquals(solvedList, board);
+  List<int> unsolvedList = [1, 2, 3, 4, 6, 5, 7, 8, 0];
+  bool t = listEquals(solvedList, board) | listEquals(unsolvedList, board);
+
+  return t;
 }
 // Set your action name, define your arguments and return parameter,
 // and then add the boilerplate code using the green button on the right!
